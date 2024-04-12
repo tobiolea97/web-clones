@@ -1,4 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .body-wrapper {
     display: flex;
+    flex: 1 0 auto;
     flex-direction: column;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+header {
+    color: white;
+}
+
+.promotion-banner-wrapper {
+    height: 50px;
+    width: 100%;
+    background-color: blueviolet;
+}
+
+.promotion-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.promotion-banner-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.promotion-baner-close button {
+    margin: 0 1rem;
+}
+
+.toolbar {
+    height: 50px;
+    width: 100%;
+    background-color: #777;
 }
