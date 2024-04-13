@@ -69,8 +69,45 @@ header {
     height: 1.5rem;
 }
 
-.toolbar {
-    height: 50px;
+.toolbar-wrapper {
     width: 100%;
-    background-color: #777;
+    height: 5.6rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+}
+
+.toolbar {
+    background: white;
+    padding: .4rem;
+    display: flex;
+}
+
+.menu-button img {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.menu-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0 1.2rem;
+    width: 4.8rem;
+    height: 4.8rem;
+}
+
+.toolbar .empty-block {
+    width: 4.8rem;
+    height: 4.8rem;
+    visibility: hidden;
+}
+
+.toolbar .logo {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo a img {
+    
 }
