@@ -543,7 +543,7 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
-    margin-bottom: .4rem;
+    margin-bottom: .8rem;
 }
 
 .courses-grid-item-content-card .caption .author {
@@ -558,13 +558,14 @@ header {
     text-overflow: ellipsis;
     white-space: normal;
     color: #6a6f73;
+    margin-bottom: .8rem;
 }
 
 .courses-grid-item-content-card .caption .rating {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: .4rem;
+    margin-bottom: .8rem;
 }
 
 .courses-grid-item-content-card .caption .rating .score {
@@ -580,7 +581,38 @@ header {
     margin-right: .4rem;
     color: #4d3105;
 }
+.courses-grid-item-content-card .caption .rating .score p {
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.2rem;
+    color: #6a6f73;
+    margin-left: .4rem;
+}
+
+.courses-grid-item-content-card .caption .rating .score .stars {
+    display: flex;
+}
+
+.courses-grid-item-content-card .caption .rating .score .stars img {
+    width: 1.7rem;
+    height: 1.7rem;
+}
 
 .courses-grid-item-content-card .caption .price {
-    
+    align-items: center;
+    color: #2d2f31;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.courses-grid-item-content-card .caption .price span {
+    color: #2d2f31;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 1.6rem;
+    line-height: 1;
+    padding: .4rem 0;
+    margin-right: .8rem;
+    white-space: nowrap;
 }
