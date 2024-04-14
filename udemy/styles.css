@@ -1,23 +1,8 @@
-@font-face {
-    font-family: 'Udemy Sans';
-    font-style: normal;
-    font-weight: 400; /* To match token @font-weight-normal */
-    font-display: fallback;
-    src: local('Udemy Sans Regular'),
-            local('UdemySans-Regular'),
-            url('/fonts/Udemy-Sans-Bold-v1.woff2') format('woff2');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
-@font-face {
-    font-family: 'Udemy Sans';
-    font-style: normal;
-    font-weight: 700; /* To match token @font-weight-bold */
-    font-display: fallback;
-    src: local('Udemy Sans Bold'),
-            local('UdemySans-Bold'),
-            url('/fonts/Udemy-Sans-Bold-v1.woff2') format('woff2');
-}
-
 
 html {
     -webkit-font-smoothing: antialiased;
@@ -375,7 +360,7 @@ header {
 
 
 /********************************************
-    Wide range
+    Wide range of courses
 ********************************************/
 .wide-range-options-wrapper {
     margin-top: 4.8rem;
@@ -388,7 +373,8 @@ header {
 }
 
 .wide-range-options-caption {
-    width: auto;   
+    width: auto;
+    margin-bottom: 1.6rem;
 }
 
 .wide-range-options-caption h2 {
@@ -407,4 +393,194 @@ header {
     font-size: 1.9rem;
     margin: 1.6rem 0 0;
     max-width: 80rem;
+}
+
+.acordeon-topic-option {
+    border-top: 1px solid #d1d7dc;
+}
+
+.acordeon-topic-option-title {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 1.9rem;
+    max-width: 36em;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    min-width: auto;
+    height: auto;
+    color: #2d2f31 !important;
+    display: block;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.6rem 0;
+}
+
+
+.acordeon-topic-option-title h3 {
+    font-size: inherit;
+    font-weight: 400;
+    max-width: 60rem;
+    display: flex;
+    flex: 1;
+    margin: 0
+}
+
+.acordeon-topic-option-title h3 button {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 1.9rem;
+    max-width: 36em;
+    position: relative;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    min-width: auto;
+    padding: 0;
+    color: #2d2f31 !important;
+    display: block;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.acordeon-topic-option-title img {
+    fill: currentColor;
+    display: inline-block;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    color: #2d2f31;
+    color: #2d2f31;
+    transform: rotate(-180deg);
+}
+
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
+.acordeon-topic-option-content {
+    padding: .8rem 0 1.6rem;
+}
+
+.acordeon-topic-option-content .courses-grid {
+    scrollbar-width: none;
+    overflow: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+    display: grid;
+    grid-auto-columns: clamp(17.3rem, 75%, 37.5rem);
+    grid-auto-flow: column;
+    grid-gap: 1.6rem;
+}
+
+.acordeon-topic-option-content .courses-grid .courses-grid-item-wrapper {
+    min-width: .1rem;
+    scroll-snap-align: start;
+}
+
+.courses-grid-item-wrapper .courses-grid-item-content {
+    height: 100%;
+    width: 100%;
+}
+
+.courses-grid-item-content .courses-grid-item-content-card {
+    display: grid;
+    position: relative;
+    gap: .8rem;
+    grid-template-rows: auto 1fr;
+    max-width: 37.5rem;
+    min-width: 17.3rem;
+    height: 100%;
+}
+
+.courses-grid-item-content-card .cover {
+    align-self: start;
+    background-color: #2d2f31;
+    border: 1px solid #d1d7dc;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: calc(1 / 0.5625);
+    width: 100%;
+}
+
+.courses-grid-item-content-card .cover img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity linear 100ms;
+    width: 100%;
+}
+
+.courses-grid-item-content-card .caption {
+    color: #2d2f31;
+    white-space: nowrap;
+    min-width: 1px;
+    width: 100%;
+}
+
+.courses-grid-item-content-card .caption .title h3 {
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 1.6rem;
+    display: block !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    margin-bottom: .4rem;
+}
+
+.courses-grid-item-content-card .caption .author {
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.2rem;
+    margin-bottom: .4rem;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    color: #6a6f73;
+}
+
+.courses-grid-item-content-card .caption .rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: .4rem;
+}
+
+.courses-grid-item-content-card .caption .rating .score {
+    display: inline-flex;
+    align-items: center;
+}
+
+.courses-grid-item-content-card .caption .rating .score span {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 1.4rem;
+    margin-right: .4rem;
+    color: #4d3105;
+}
+
+.courses-grid-item-content-card .caption .price {
+    
 }
