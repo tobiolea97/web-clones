@@ -1,3 +1,9 @@
+:root {
+    --violet: #5624d0;
+    --grey: #eee;
+    --white: #fff;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -32,21 +38,25 @@ img, picture {
     padding: 0;
 }
 
-header {
-    color: white;
+.section-wrapper {
+    margin-top: 4.8rem;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
 }
+
+/********************************************
+    Header
+********************************************/
 
 .promotion-banner-wrapper {
     width: 100%;
-    background-color: #5624d0;
+    background-color: var(--violet);
 }
 
 .promotion-banner {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
 }
 
 .promotion-banner-text {
@@ -54,7 +64,16 @@ header {
     justify-content: center;
     align-items: center;
     padding: 1.6rem 0 1.6rem 2.4rem;
-    width: 100%;
+    width: 90%;
+    color: var(--white);
+}
+
+.promotion-banner-text div span {
+    font-size: 1.4rem;
+}
+
+.promotion-banner-text div span:first-child {
+    font-weight: 700;
 }
 
 .promotion-baner-close button {
@@ -85,6 +104,7 @@ header {
     width: 100%;
     height: 5.6rem;
     box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+    position: relative;
     z-index: 100;
 }
 
@@ -121,18 +141,15 @@ header {
     justify-content: center;
 }
 
+/********************************************
+    Billboard
+********************************************/
+
 .billboard-wrapper {
-    min-width: 100%;
-    min-height: 200px;
     margin-bottom: 4.8rem;
 }
 
-.carrousel-billboard {
-    max-width: 134rem;
-    min-width: 32rem;
-}
-
-.carrousel-scroll-port {
+.billboard-carrousel-scroll-port {
     scrollbar-width: none;
     display: flex;
     overflow: auto;
@@ -142,23 +159,7 @@ header {
     touch-action: manipulation;
 }
 
-.red-square {
-    background-color: red;
-    min-width: 100%;
-    min-height: 200px;
-    margin-bottom: 4.8rem;
-    scroll-snap-align: start;
-}
-
-.blue-square {
-    background-color: blue;
-    min-width: 100%;
-    min-height: 200px;
-    margin-bottom: 4.8rem;
-    scroll-snap-align: start;
-}
-
-.carrousel-scroll-port-container {
+.billboard-carrousel-scroll-port-container {
     display: block;
     margin: 0 auto;
     position: relative;
@@ -166,17 +167,17 @@ header {
     scroll-snap-align: start;
 }
 
-.carrousel-scroll-port-container .picture-container {
+.billboard-carrousel-scroll-port-container .picture-container {
     margin-bottom: 1.6rem;
 }
 
-.carrousel-scroll-port-container .picture-container picture {
+.billboard-carrousel-scroll-port-container .picture-container picture {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
 }
 
-.carrousel-scroll-port-container .picture-container picture img {
+.billboard-carrousel-scroll-port-container .picture-container picture img {
     object-fit: cover;
     height: 25rem;
     object-position: center;
@@ -184,7 +185,7 @@ header {
     max-width: 100%;
 }
 
-.carrousel-scroll-port-container .caption-container {
+.billboard-carrousel-scroll-port-container .caption-container {
     display: flex;
     flex-direction: column;
     box-shadow: none;
@@ -193,67 +194,34 @@ header {
 }
 
 .caption-container h1 {
-    min-width: 32rem;
-    display: block !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 80rem;
     font-size: 2.8rem;
     padding: 0 2.4rem;
     margin-bottom: .8rem;
-    margin-top: 0;
     font-family: SuisseWorks;
 }
 
 .caption-container p {
-    font-weight: 400;
     line-height: 1.4;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    max-width: 80rem;
     font-size: 1.4rem;
     padding: 0 2.4rem;
-    margin: 0;
 }
 
-.carrousel-scroll-port-container .search-input-container {
+.billboard-carrousel-scroll-port-container .search-input-container {
     display: flex;
     flex-direction: column;
     padding: 2.8rem 2.4rem 0;
-    max-width: 80rem;
-    min-width: 32rem;
 }
 
 .search-input-container button {
     font-family: var(--font-stack-text);
-    font-weight: 400;
-    line-height: 1.4;
     font-size: 1.6rem;
     position: relative;
     align-items: center;
-    border: none;
     cursor: pointer;
     display: inline-flex;
-    min-width: 8rem;
-    padding: 0 1.2rem;
-    justify-content: center;
-    user-select: none;
-    -webkit-user-select: none;
-    vertical-align: bottom;
-    white-space: nowrap;
     height: 4.8rem;
     background-color: transparent;
-    min-width: auto;
-    padding: 0;
     border: 1px solid #2d2f31;
-    display: flex;
     color: #6a6f73;    
 }
 
@@ -270,7 +238,7 @@ header {
     position: absolute;
 }
 
-.carrousel-scroll-port-container .plans-button-container {
+.billboard-carrousel-scroll-port-container .plans-button-container {
     margin-top: 1.6rem;
     flex: 1;
     display: flex;
@@ -279,28 +247,13 @@ header {
 }
 
 .plans-button-container a {
-    text-decoration: none;
-    position: relative;
     align-items: center;
-    border: none;
-    cursor: pointer;
     display: inline-flex;
-    min-width: 8rem;
     padding: 0 1.2rem;
-    justify-content: center;
-    user-select: none;
-    -webkit-user-select: none;
-    vertical-align: bottom;
-    white-space: nowrap;
     height: 4.8rem;
     color: white;
     background-color: black;
-}
-
-.plans-button-container a {
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: 0;
     font-size: 1.6rem;
 }
 
@@ -308,10 +261,10 @@ header {
     Trusted by
 ********************************************/
 .trusted-by-wrapper {
-    background-color: #EEE;
+    background-color: var(--grey);
 }
 
-.trusted-by {
+.trusted-by-content {
     width: auto;
     max-width: 134rem;
     margin-right: auto;
@@ -320,37 +273,27 @@ header {
     padding-left: 2.4rem;
 }
 
-.trusted-by-content {
+.trusted-by-content-grid {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    container-type: inline-size;
     padding: 4.8rem 2.4rem;
 }
 
-.trusted-by-content h2 {
+.trusted-by-content-grid h2 {
     color: #6a6f73;
     font-weight: 400;
     margin-bottom: 2.4rem;
     font-size: 1.4rem;
-    max-width: 100%;
 }
 
-.company-logos ul {
+.company-logos {
     list-style: none;
-    margin: 0;
-    padding: 0;
-    max-width: none;
     display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
-    grid-auto-flow: initial;
     grid-template-columns: repeat(4, 4fr);
     grid-gap: 1.6rem;
 }
 
-.company-logos ul li {
+.company-logos li {
     justify-self: center;
     display: flex;
     align-items: center;
@@ -358,39 +301,18 @@ header {
     padding-left: 0;
 }
 
-.company-logos ul li img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-}
-
 
 /********************************************
     Wide range of courses
 ********************************************/
-.wide-range-options-wrapper {
-    margin-top: 4.8rem;
-    width: auto;
-    max-width: 134rem;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 2.4rem;
-    padding-left: 2.4rem;
-}
-
 .wide-range-options-caption {
-    width: auto;
     margin-bottom: 1.6rem;
 }
 
 .wide-range-options-caption h2 {
     font-family: 'SuisseWorks';
-    font-weight: 700;
     font-size: 2.8rem;
     line-height: 1.35;
-    letter-spacing: -.012rem;
-    max-width: 36em;
-    max-width: 80rem;
 }
 
 .wide-range-options-caption p {
@@ -398,7 +320,6 @@ header {
     line-height: 1.4;
     font-size: 1.9rem;
     margin: 1.6rem 0 0;
-    max-width: 80rem;
 }
 
 .acordeon-topic-option {
@@ -406,37 +327,10 @@ header {
 }
 
 .acordeon-topic-option-title {
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: 0;
-    font-size: 1.9rem;
-    max-width: 36em;
-    position: relative;
-    border: none;
-    cursor: pointer;
-    user-select: none;
-    background-color: transparent;
-    min-width: auto;
-    height: auto;
-    color: #2d2f31 !important;
-    display: block;
-    text-align: left;
-    white-space: normal;
-    width: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     padding: 1.6rem 0;
-}
-
-
-.acordeon-topic-option-title h3 {
-    font-size: inherit;
-    font-weight: 400;
-    max-width: 60rem;
-    display: flex;
-    flex: 1;
-    margin: 0
 }
 
 .acordeon-topic-option-title h3 button {
@@ -444,34 +338,16 @@ header {
     line-height: 1.2;
     letter-spacing: 0;
     font-size: 1.9rem;
-    max-width: 36em;
-    position: relative;
-    align-items: center;
     border: none;
     cursor: pointer;
     background-color: transparent;
-    min-width: auto;
-    padding: 0;
-    color: #2d2f31 !important;
-    display: block;
-    text-align: left;
-    white-space: normal;
-    width: 100%;
 }
 
 .acordeon-topic-option-title img {
-    fill: currentColor;
-    display: inline-block;
-    flex-shrink: 0;
     width: 2rem;
     height: 2rem;
     color: #2d2f31;
-    color: #2d2f31;
     transform: rotate(-180deg);
-}
-
-.margin-bottom {
-    margin-bottom: 50px;
 }
 
 .acordeon-topic-option-content {
@@ -504,66 +380,27 @@ header {
 
 .courses-grid-item-content .courses-grid-item-content-card {
     display: grid;
-    position: relative;
     gap: .8rem;
     grid-template-rows: auto 1fr;
-    max-width: 37.5rem;
-    min-width: 17.3rem;
-    height: 100%;
-}
-
-.courses-grid-item-content-card .cover {
-    align-self: start;
-    background-color: #2d2f31;
-    border: 1px solid #d1d7dc;
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: calc(1 / 0.5625);
-    width: 100%;
-}
-
-.courses-grid-item-content-card .cover img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    transition: opacity linear 100ms;
-    width: 100%;
-}
-
-.courses-grid-item-content-card .caption {
-    color: #2d2f31;
-    white-space: nowrap;
-    min-width: 1px;
-    width: 100%;
 }
 
 .courses-grid-item-content-card .caption .title h3 {
-    font-weight: bold;
-    line-height: 1.2;
-    letter-spacing: 0;
     font-size: 1.6rem;
-    display: block !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: normal;
     margin-bottom: .8rem;
 }
 
 .courses-grid-item-content-card .caption .author {
-    font-weight: 400;
     line-height: 1.4;
     font-size: 1.2rem;
-    margin-bottom: .4rem;
     display: -webkit-box !important;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    color: #6a6f73;
     margin-bottom: .8rem;
 }
 
@@ -632,28 +469,14 @@ header {
 /********************************************
     The students are viewing
 ********************************************/
-.viewed-by-students-wrapper {
-    width: 100%;
-    max-width: 134rem;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 2.4rem;
-    padding-left: 2.4rem;
-    margin-top: 4.8rem;
-}
-
 .viewed-by-students-title h2 {
-    font-weight: 700;
     line-height: 1.2;
-    letter-spacing: 0;
     font-size: 2.4rem;
-    max-width: 100%;
     margin-bottom: 1.5rem;
 }
 
 .viewed-by-students-content {
     scrollbar-width: none;
-    display: flex;
     overflow: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
@@ -672,7 +495,6 @@ header {
 
 .item-wrapper .card {
     display: grid;
-    position: relative;
     width: 17.3rem;
     gap: .8rem;
     grid-template-columns: auto 1fr;
@@ -705,16 +527,11 @@ header {
 
 
 .item-wrapper .card .caption-wrapper .title h3 {
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: 0;
     font-size: 1.4rem;
-    display: block!important;
     display: -webkit-box!important;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
     white-space: normal;
 }
 
@@ -748,81 +565,43 @@ header {
 .best-seller-content {
     font-weight: 700;
     line-height: 1.2;
-    letter-spacing: 0;
     font-size: 1.2rem;
     letter-spacing: .02rem;
-    display: inline-block;
     padding: .4rem .8rem;
-    white-space: nowrap;
-    background-color: var(--color-yellow-200);
     color: #3d3c0a;
     background-color: #eceb98;
 }
 
 /********************************************
-    The students are viewing
+    Main categories
 ********************************************/
-.main-categories-wrapper {
-    width: 100%;
-    max-width: 134rem;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 4.8rem;
-    padding: 4.8rem 2.4rem;
+.main-categories-content {
+    margin-bottom: 4.8rem;
 }
 
-.main-categories-wrapper h2 {
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: 0;
+.main-categories-content h2 {
     font-size: 2.4rem;
-    max-width: 100%;
     margin-bottom: 1.5rem;
 }
 
-.main-categories-wrapper ul {
-    font-size: inherit;
-    font-weight: 400;
-    max-width: 60rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    max-width: none;
+.main-categories-content ul {
     margin: -.8rem 0 0 -.8rem;
 }
 
-.main-categories-wrapper ul li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    max-width: none;
+.main-categories-content ul li {
     margin: .8rem 0 0 .8rem;
     display: inline-block;
 }
 
-.main-categories-wrapper ul  li a {
+.main-categories-content ul  li a {
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: 0;
     font-size: 1.6rem;
-    position: relative;
     align-items: center;
-    border: none;
-    cursor: pointer;
     display: inline-flex;
-    min-width: 8rem;
     padding: 0 1.2rem;
-    justify-content: center;
-    user-select: none;
-    -webkit-user-select: none;
-    vertical-align: bottom;
-    white-space: nowrap;
     height: 4.8rem;
-    color: var(--color-gray-500);
-    background-color: transparent;
     border: 1px solid #2d2f31;
     border-radius: 9999px;
-    min-width: 4rem;
 }
 
 /********************************************
