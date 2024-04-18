@@ -1040,7 +1040,7 @@ img, picture {
     .categories-content .categories-content-item {
         width: calc(100% / 4 - 1.6rem);
     }
-    .transparent-button {
+    .categories-wrapper .transparent-button {
         width: auto;
         padding: .4rem 1.8rem;
     }
@@ -1052,6 +1052,9 @@ img, picture {
 .udemy-business-wrapper {
     width: 100%;
     max-width: 134rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-right: auto;
     margin-left: auto;
     padding-right: 2.4rem;
@@ -1060,12 +1063,21 @@ img, picture {
     padding-bottom: 2.4rem;
 }
 
-.udemy-business-wrapper img {
-    margin: 0 auto 2.4rem;
+.udemy-business-wrapper .udemy-business-image {
+    display: flex;
+    align-items: center;
+    margin-left: 1.8rem;
+    min-width: 44rem;
+}
+
+.udemy-business-wrapper .udemy-business-image img {
+    width: 48rem;
+    height: 48rem;
+    margin: 3.2rem auto;
 }
 
 .udemy-business-wrapper .udemy-business-content {
-    max-width: 60rem;
+    max-width: 54rem;
     margin: 0 auto;
     text-align: center;
 }
@@ -1074,6 +1086,7 @@ img, picture {
     width: 192px;
     aspect-ratio: auto 192 / 32;
     height: 32px;
+    margin: 3.2rem auto;
 }
 
 .udemy-business-wrapper .udemy-business-content h3 {
@@ -1131,7 +1144,23 @@ img, picture {
 
 .udemy-business-buttons .get-udemy-business {
     width: 100%;
+    margin: 0 1.8rem .8rem;
+}
+
+.udemy-business-buttons .more-info {
+    width: 100%;
     margin: 0 0 .8rem;
+}
+
+.udemy-business-buttons .more-info .more-info-button a {
+    font-weight: 700;
+    font-size: 1.4rem;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 4rem;
+    border: 1px solid #2d2f31;
+    width: 100%;
 }
 
 .udemy-business-buttons .get-udemy-business a {
@@ -1147,6 +1176,43 @@ img, picture {
     color: white;
     background-color: #222;
     width: 100%;
+}
+
+.udemy-business-buttons .more-info a {
+    text-decoration: none;
+    letter-spacing: 0;
+    font-size: 1.6rem;
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0 1.2rem;
+    justify-content: center;
+    height: 4.8rem;
+    color: #000;
+    background-color: #fff;
+    width: 100%;
+    border: 1px solid black;
+}
+
+@media screen and (min-width: 850px) {
+    .udemy-business-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .udemy-business-wrapper img {
+        width: 400px;
+        height: 400px;
+        margin-left: 4.8rem;
+    }
+
+    .udemy-business-wrapper .udemy-business-content {
+        max-width: 56rem;
+    }
+    
+    .udemy-business-wrapper .udemy-business-content .udemy-business-buttons {
+        flex-direction: row;
+    }
 }
 
 /********************************************
