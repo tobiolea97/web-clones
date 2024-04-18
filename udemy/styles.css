@@ -744,6 +744,7 @@ img, picture {
     padding: 3.2rem;
     padding-top: 3.2rem;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .topics-grid .topics-grid-caption {
@@ -843,6 +844,7 @@ img, picture {
     grid-auto-flow: column;
     grid-gap: 1.6rem;
     grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 2rem;
 }
 
 .viewed-by-students-content .item-wrapper {
@@ -963,7 +965,18 @@ img, picture {
 /********************************************
     Categories
 ********************************************/
+.categories-section {
+    background-color: #eee;
+    padding-bottom: 4.8rem;
+}
+
 .categories-wrapper {
+    margin-top: 4.8rem;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+    max-width: 134rem;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 2.4rem;
     padding-bottom: 2.4rem;
     background-color: #EEE;
@@ -1021,6 +1034,16 @@ img, picture {
     height: 4rem;
     border: 1px solid #2d2f31;
     width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+    .categories-content .categories-content-item {
+        width: calc(100% / 4 - 1.6rem);
+    }
+    .transparent-button {
+        width: auto;
+        padding: .4rem 1.8rem;
+    }
 }
 
 /********************************************
