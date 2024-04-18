@@ -744,6 +744,7 @@ img, picture {
     padding: 3.2rem;
     padding-top: 3.2rem;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .topics-grid .topics-grid-caption {
@@ -843,6 +844,7 @@ img, picture {
     grid-auto-flow: column;
     grid-gap: 1.6rem;
     grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 2rem;
 }
 
 .viewed-by-students-content .item-wrapper {
@@ -963,7 +965,18 @@ img, picture {
 /********************************************
     Categories
 ********************************************/
+.categories-section {
+    background-color: #eee;
+    padding-bottom: 4.8rem;
+}
+
 .categories-wrapper {
+    margin-top: 4.8rem;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+    max-width: 134rem;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 2.4rem;
     padding-bottom: 2.4rem;
     background-color: #EEE;
@@ -1023,12 +1036,25 @@ img, picture {
     width: 100%;
 }
 
+@media screen and (min-width: 700px) {
+    .categories-content .categories-content-item {
+        width: calc(100% / 4 - 1.6rem);
+    }
+    .categories-wrapper .transparent-button {
+        width: auto;
+        padding: .4rem 1.8rem;
+    }
+}
+
 /********************************************
     Udemy business
 ********************************************/
 .udemy-business-wrapper {
     width: 100%;
     max-width: 134rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-right: auto;
     margin-left: auto;
     padding-right: 2.4rem;
@@ -1037,12 +1063,19 @@ img, picture {
     padding-bottom: 2.4rem;
 }
 
-.udemy-business-wrapper img {
-    margin: 0 auto 2.4rem;
+.udemy-business-wrapper .udemy-business-image {
+    display: flex;
+    align-items: center;
+    margin-left: 1.8rem;
+}
+
+.udemy-business-wrapper .udemy-business-image img {
+    width: 48rem;
+    margin: 3.2rem auto;
 }
 
 .udemy-business-wrapper .udemy-business-content {
-    max-width: 60rem;
+    max-width: 54rem;
     margin: 0 auto;
     text-align: center;
 }
@@ -1051,6 +1084,7 @@ img, picture {
     width: 192px;
     aspect-ratio: auto 192 / 32;
     height: 32px;
+    margin: 3.2rem auto;
 }
 
 .udemy-business-wrapper .udemy-business-content h3 {
@@ -1108,7 +1142,23 @@ img, picture {
 
 .udemy-business-buttons .get-udemy-business {
     width: 100%;
+    margin-bottom: 1.8rem;
+}
+
+.udemy-business-buttons .more-info {
+    width: 100%;
     margin: 0 0 .8rem;
+}
+
+.udemy-business-buttons .more-info .more-info-button a {
+    font-weight: 700;
+    font-size: 1.4rem;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 4rem;
+    border: 1px solid #2d2f31;
+    width: 100%;
 }
 
 .udemy-business-buttons .get-udemy-business a {
@@ -1126,18 +1176,78 @@ img, picture {
     width: 100%;
 }
 
+.udemy-business-buttons .more-info a {
+    text-decoration: none;
+    letter-spacing: 0;
+    font-size: 1.6rem;
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0 1.2rem;
+    justify-content: center;
+    height: 4.8rem;
+    color: #000;
+    background-color: #fff;
+    width: 100%;
+    border: 1px solid black;
+}
+
+@media screen and (min-width: 1000px) {
+    .udemy-business-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .udemy-business-wrapper img {
+        width: 400px;
+        height: 400px;
+        margin-left: 4.8rem;
+    }
+
+    .udemy-business-wrapper .udemy-business-content {
+        max-width: 56rem;
+    }
+    
+    .udemy-business-wrapper .udemy-business-content .udemy-business-buttons {
+        flex-direction: row;
+    }
+
+    .udemy-business-buttons .get-udemy-business {
+        margin-bottom: 0;
+        margin-right: 1.8rem
+    }
+
+    .udemy-business-wrapper .udemy-business-content h3 {
+        font-size: 3.2rem;
+    }
+}
+
 /********************************************
     Become an instructor
 ********************************************/
 .become-an-instructor-wrapper {
     width: 100%;
     max-width: 134rem;
+    display:flex;
+    flex-direction: column;
     margin-right: auto;
     margin-left: auto;
     padding-right: 2.4rem;
     padding-left: 2.4rem;
     padding-top: 2.4rem;
     padding-bottom: 2.4rem;
+    margin-bottom: 2.8rem;
+}
+
+.become-an-instructor-wrapper .become-an-instructor-img {
+    display: flex;
+    align-items: center;
+    margin-left: 1.8rem;
+}
+
+.become-an-instructor-wrapper .become-an-instructor-img img {
+    width: 48rem;
+    margin: 3.2rem auto;
 }
 
 .become-an-instructor-wrapper .become-an-instructor-content {
@@ -1199,6 +1309,17 @@ img, picture {
     background-color: #222;
     width: 100%;
 }
+
+@media screen and (min-width: 1000px) {
+    .become-an-instructor-wrapper {
+        flex-direction: row;
+    }
+
+    .become-an-instructor-wrapper .become-an-instructor-content h3 {
+        font-size: 3.2rem;
+    }
+}
+
 
 /********************************************
     Footer
