@@ -1631,3 +1631,46 @@ img, picture {
     height: 100%;
     z-index: 100;
 }
+
+.sidebar-submenu {
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 28rem;
+    max-width: 78%;
+    height: 100%;
+    background: white;
+    position: absolute;
+    max-width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08), 0 4px 12px rgba(0, 0, 0, .08);
+    z-index: 1;
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 3.2rem;
+    z-index: 15000;
+    display: none;
+}
+
+.sidebar-submenu ul li button {
+    line-height: 1.4;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding: 1.6rem 0;
+    color: #2d2f31;
+    padding-left: 1.6rem;
+}
+
+.sidebar-submenu ul li button img {
+    width: 2.4rem;
+    height: 2.4rem;
+    transform: rotate(270deg);
+    opacity: .6;
+}
+
+.sidebar-submenu ul li button div {
+    margin-left: 2.4rem;
+}
