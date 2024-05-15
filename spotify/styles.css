@@ -64,3 +64,25 @@ body {
     height: 3.2rem;
     margin-right: 1rem;
 }
+
+.album-item {
+    display: grid;
+    grid-template-areas: "cover title" "cover subtitle";
+}
+
+.album-item > img {
+    grid-area: cover;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-right: 1rem;
+}
+
+.album-item > h1 {
+    grid-area: title;
+    font-size: 1.6rem
+}
+
+.album-item > h2 {
+    grid-area: subtitle;
+    font-size: 1.3rem
+}
