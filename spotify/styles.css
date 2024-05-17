@@ -88,6 +88,7 @@ body {
 .albums-section {
     flex-grow: 1;
     align-content: start;
+    height: 50%;
 }
 
 .albums-container {
@@ -97,6 +98,7 @@ body {
     gap: .8rem;
     margin-top: 1rem;
     overflow-y: auto;
+    scrollbar-width: none;
 }
 
 .album-item {
