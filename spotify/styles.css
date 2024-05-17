@@ -16,41 +16,59 @@ html {
 
 body {
     margin: 0;
-    padding: 1rem;
     font-family: Montserrat;
-    height: vh100;
-    width: 100%;
     background-color: var(--black);
     color: var(--base-font-color);
 }
 
+/**********************************************/
+/*                 wrapper                    */
+/**********************************************/
+.page-wrapper {
+    display: grid;
+    height: 100vh;
+    gap: 1vh;
+    grid-template-areas:
+        "left-sidebar main-view right-sidebar"
+        "now-playing-bar now-playing-bar now-playing-bar";
+    position: relative;
+    grid-template-columns: 3fr 8fr 3fr;
+    grid-template-rows: 89vh 10vh;
+}
 
 /**********************************************/
 /*               left-sidebar                 */
 /**********************************************/
 .left-sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    min-width: 20%;
-    z-index: 1;
+    grid-area: left-sidebar;
     display:flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+.left-sidebar h1 {
+    grid-area: title;
+    font-size: 1.6rem;
+    text-align: start;
+}
+
+.left-sidebar h2 {
+    grid-area: subtitle;
+    font-size: 1.3rem;
+    color: var(--base-font-color);
+    text-align: start;
 }
 
 .left-sidebar > div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     margin-top: 1rem;
     background-color: var(--black-1);
     color: white;
     font-size: 1.6rem;
     border-radius: 1rem;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
 }
 
 .menu-item {
@@ -67,6 +85,20 @@ body {
     margin-right: 1rem;
 }
 
+.albums-section {
+    flex-grow: 1;
+    align-content: start;
+}
+
+.albums-container {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: .8rem;
+    margin-top: 1rem;
+    overflow-y: auto;
+}
+
 .album-item {
     display: grid;
     grid-template-areas: "cover title" "cover subtitle";
@@ -79,15 +111,14 @@ body {
     margin-right: 1rem;
 }
 
-.left-sidebar h1 {
-    grid-area: title;
-    font-size: 1.6rem;
-    text-align: start;
-}
-
-.album-item > h2 {
-    grid-area: subtitle;
-    font-size: 1.3rem;
-    color: var(--base-font-color);
-    text-align: start;
+/**********************************************/
+/*              now-playing                   */
+/**********************************************/
+.now-playing-bar {
+    grid-area: now-playing-bar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    padding: 1rem;
 }
