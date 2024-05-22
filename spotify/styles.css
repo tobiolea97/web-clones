@@ -308,3 +308,50 @@ h2 {
     color: var(--white);
 }
 
+.play-panel {
+    display: flex;
+    row-gap: 1rem;
+    flex-direction: column;
+}
+
+.play-panel .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2.4rem;
+}
+
+.play-panel .buttons > img {
+    width: 2rem;
+    height: 2rem;
+    opacity: .8;
+}
+
+.play-panel .buttons > img:nth-child(3) {
+    width: 3.4rem;
+    height: 3.4rem;
+    opacity: 1;
+}
+
+.playing {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.playing span {
+    font-size: 1.2rem
+}
+
+.progress-bar {
+    background-color: var(--base-font-color);
+    border-radius: 5px;
+    min-width: 50rem;
+    height: .5rem;
+}
+
+.progress-bar-completed {
+    background-color: var(--white);
+    border-radius: 5px;
+    height: 100%;
+}
