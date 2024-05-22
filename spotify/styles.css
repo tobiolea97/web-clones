@@ -96,7 +96,7 @@ body {
 .page-wrapper {
     display: grid;
     height: 100vh;
-    gap: 2vh;
+    gap: 1vh;
     grid-template-areas:
         "left-sidebar main-view right-sidebar"
         "now-playing-bar now-playing-bar now-playing-bar";
