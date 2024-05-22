@@ -223,6 +223,7 @@ h2 {
     text-align: center;
     cursor: pointer;
     display: flex;
+    flex-direction: column;
 }
 
 .main-content-group > div:nth-child(1) {
@@ -232,13 +233,46 @@ h2 {
     gap: .5rem;
 }
 
+.main-content-group > div:nth-child(1) h1 {
+    font-size: 1.4rem;
+}
+
+.main-content-group > div:not(:nth-child(1)) {
+    margin-top: 6.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content-group > div:not(:nth-child(1)) h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+}
+
 .main-content-group .menu-item {
     background-color: var(--black-2);
     border-radius: .5rem;
 }
 
-.main-content-group h1 {
-    font-size: 1.4rem;
+.album-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+}
+
+.album-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.album-card h1 {
+    font-size: 1.5rem !important;
+}
+
+.album-card > img {
+    width: 100%;
+    height: auto;
+    border-radius: .5rem;
 }
 
 
