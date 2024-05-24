@@ -36,6 +36,10 @@ h2 {
     text-align: start;
 }
 
+.mb-5 {
+    margin-bottom: 5rem !important;
+}
+
 .rounded-button {
     display: flex;
     justify-content: center;
@@ -75,6 +79,16 @@ h2 {
     cursor: pointer;
 }
 
+.xs2 {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.xs {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
 .sm {
     width: 2.4rem;
     height: 2.4rem;
@@ -89,6 +103,14 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.opacity-05 {
+    opacity: .5;
+}
+
+.space-bewteen {
+    justify-content: space-between;
 }
 
 .grow {
@@ -354,4 +376,31 @@ h2 {
     background-color: var(--white);
     border-radius: 5px;
     height: 100%;
+}
+
+/**********************************************/
+/*               right side bar               */
+/**********************************************/
+.right-sidebar {
+    grid-area: right-sidebar;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.right-sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: var(--black-1);
+    color: white;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    padding: 2rem 2rem;
+}
+
+.right-sidebar-wrapper > div {
+    margin-bottom: 2rem;
 }
