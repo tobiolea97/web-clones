@@ -36,8 +36,8 @@ h2 {
     text-align: start;
 }
 
-.mb-5 {
-    margin-bottom: 5rem !important;
+.mb-4 {
+    margin-bottom: 4rem !important;
 }
 
 .rounded-button {
@@ -399,8 +399,11 @@ h2 {
     font-size: 1.6rem;
     border-radius: 1rem;
     padding: 2rem 2rem;
+    gap: .5rem;
 }
 
-.right-sidebar-wrapper > div {
-    margin-bottom: 2rem;
+
+.right-sidebar-wrapper h1 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
