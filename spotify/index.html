@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-    <div class="page-wrapper">
+    <div class="page-wrapper no-right-sidebar">
         <div class="left-sidebar">
             <div class="home-section">
                 <div class="menu-item">
@@ -272,7 +272,7 @@
                     <div class="flex">
                         <img class="sm" src="images/now-playing-white.png" >
                         <img class="sm" src="images/microphone-white.png" >
-                        <img class="sm" src="images/play-queue-white.png" >
+                        <img id="toogleShowPlayingQueueBtn" class="sm" src="images/play-queue-white.png" >
                         <img class="sm" src="images/devices-white.png" >
                         <img class="sm" src="images/volume-white.png" >
                         <div class="progress-bar mr-1">
@@ -288,7 +288,7 @@
             <div class="right-sidebar-wrapper">
                 <div class="flex space-bewteen mb-4">
                     <h1>Play queue</h1>
-                    <img class="xs2 opacity-05" src="images/x-white.png">
+                    <img id="closePlayingQueueBtn" class="xs2 opacity-05" src="images/x-white.png">
                 </div>
                 <div class="albums-container">
                     <div>
@@ -365,6 +365,6 @@
         </div>
     </div>
 </body>
-<script src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </html>
 

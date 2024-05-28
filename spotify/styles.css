@@ -144,6 +144,13 @@ h2 {
     grid-template-rows: 89vh 10vh;
 }
 
+.no-right-sidebar {
+    grid-template-areas:
+        "left-sidebar main-view"
+        "now-playing-bar now-playing-bar";
+    grid-template-columns: 3fr 8fr;
+}
+
 /**********************************************/
 /*               left-sidebar                 */
 /**********************************************/
@@ -386,9 +393,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
     --progress-bar-size: 8rem;
-
 }
 
 /**********************************************/
@@ -396,7 +401,7 @@ h2 {
 /**********************************************/
 .right-sidebar {
     grid-area: right-sidebar;
-    display: flex;
+    display: none;
     flex-direction: column;
     overflow: hidden;
 }
@@ -422,7 +427,11 @@ h2 {
 }
 
 .buttons-wrapper img {
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     margin-right: 1rem;
+}
+
+.buttons-wrapper img:hover {
+    cursor: pointer;
 }
