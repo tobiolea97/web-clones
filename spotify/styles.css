@@ -83,6 +83,10 @@ h2 {
     cursor: pointer;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .xs4 {
     width: .8rem !important;
     height: .8rem !important;
