@@ -37,6 +37,17 @@ document.getElementById('closePlayingQueueBtn')
             configureRightSideBarLayout();
         });
 
+document.getElementById('closePlayingInfoBtn')
+        .addEventListener('click', () => {
+            rightSideBarLayout.showSideBar = false;
+            rightSideBarLayout.showPlayingQueue = false;
+            rightSideBarLayout.playingQueueButtonEnabled = false;
+            rightSideBarLayout.playingInfoButtonEnabled = false;
+            rightSideBarLayout.showPlayingInfo = false;
+            rightSideBarLayout.showPlayingQueue = false;
+            configureRightSideBarLayout();
+        });
+
 function configureRightSideBarLayout() {
     let rightSideBar = document.querySelector('.right-sidebar');
     let pageWrapper = document.querySelector('.page-wrapper');
@@ -44,6 +55,8 @@ function configureRightSideBarLayout() {
     let toogleShowPlayingQueueDot = document.getElementById('toogleShowPlayingQueueDot');
     let toogleShowPlayingInfoBtn = document.getElementById('toogleShowPlayingInfoBtn');
     let toogleShowPlayingInfoDot = document.getElementById('toogleShowPlayingInfoDot');
+    let nowPlayingInfo = document.getElementById('now-playing-info');
+    let playingQueue = document.getElementById('now-playing-queue');
 
     rightSideBar.style.display = rightSideBarLayout.showSideBar ? 'flex' : 'none';
     rightSideBarLayout.showSideBar ? pageWrapper.classList.remove('no-right-sidebar'): pageWrapper.classList.add('no-right-sidebar');
@@ -51,10 +64,21 @@ function configureRightSideBarLayout() {
     // playing queue layout
     toogleShowPlayingQueueBtn.src = rightSideBarLayout.playingQueueButtonEnabled ? 'images/play-queue-green.png' : 'images/play-queue-white.png';
     toogleShowPlayingQueueDot.style.visibility = rightSideBarLayout.playingQueueButtonEnabled ? 'visible' : 'hidden';
+    playingQueue.style.display = rightSideBarLayout.showPlayingQueue ? 'block' : 'none';
     
     // playing info layout
     toogleShowPlayingInfoBtn.src = rightSideBarLayout.playingInfoButtonEnabled ? 'images/now-playing-green.png' : 'images/now-playing-white.png';
     toogleShowPlayingInfoDot.style.visibility = rightSideBarLayout.playingInfoButtonEnabled ? 'visible' : 'hidden';
+    nowPlayingInfo.style.display = rightSideBarLayout.showPlayingInfo ? 'block' : 'none';
 
 }
 
+
+
+/* temporal code */
+rightSideBarLayout.showSideBar = !rightSideBarLayout.showPlayingInfo;
+rightSideBarLayout.showPlayingInfo = !rightSideBarLayout.showPlayingInfo;
+rightSideBarLayout.showPlayingQueue = false;
+rightSideBarLayout.playingInfoButtonEnabled = rightSideBarLayout.showPlayingInfo;
+rightSideBarLayout.playingQueueButtonEnabled = false;
+configureRightSideBarLayout()
