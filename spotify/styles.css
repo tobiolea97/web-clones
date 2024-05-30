@@ -60,6 +60,23 @@ h2 {
     margin-right: 1rem !important;
 }
 
+.transparent-button {
+    display: flex;
+    background-color: var(--transparent);
+    border: .5px solid var(--base-font-color);
+    border-radius: 10rem;
+    color: var(--white);
+    cursor: pointer;
+    width: auto;
+    padding: .5rem 1.3rem;
+    margin: 0;
+}
+
+.transparent-button span {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
 .rounded-button {
     display: flex;
     justify-content: center;
@@ -512,6 +529,7 @@ h2 {
     gap: .5rem;
     border-radius: .4rem;
     padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .artist-information-panel h1 {
@@ -531,6 +549,12 @@ h2 {
     color: var(--base-font-color);
 }
 
+.artist-information-panel h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--base-font-color);
+}
+
 .artist-information-panel p {
     font-size: 1.2rem;
     color: var(--base-font-color);
@@ -542,20 +566,14 @@ h2 {
     border-radius: 50%;
 }
 
-.artist-information-panel .button {
+.credit-item {
+    margin-bottom: 1.5rem;
+ 
+}
+
+.credit-item div:nth-child(1) {
     display: flex;
-    background-color: var(--transparent);
-    border: .5px solid var(--base-font-color);
-    border-radius: 10rem;
-    color: var(--white);
-    cursor: pointer;
-    width: auto;
-    padding: .5rem 1.3rem;
-    margin: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: .5rem;
 }
-
-.button span {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
