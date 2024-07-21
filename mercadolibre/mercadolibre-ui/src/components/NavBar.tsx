@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
   return (
-    <nav>
+    <nav className='bg-customYellow'>
       <ul>
         <li>
           <Link to="/home">Home</Link>
