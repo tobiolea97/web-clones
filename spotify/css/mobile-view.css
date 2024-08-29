@@ -1,0 +1,70 @@
+.bg-green {
+  background-color: #1db954;
+}
+
+.bg-grey {
+  background-color: #fff4;
+}
+
+.black {
+  color: #000;
+}
+
+.white {
+  color: #fff;
+}
+
+.mobile-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0 16px;
+  height: 56px;
+  background-color: #000;
+}
+
+.mobile-button {
+  display: flex;
+  gap: 1rem;
+  border-radius: 10rem;
+  padding: 1rem 2rem;
+  color: var(--white);
+  height: 3.6rem;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem;
+  cursor: pointer;
+}
+
+.mobile-button span {
+  font-size: 1.2rem;
+}
+
+
+@media screen and (max-width: 950px) {
+  .main-content-group > div:nth-child(1) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .album-item {
+    grid-template-areas: 'cover title';
+  }
+
+  .album-item h1 {
+    align-self: center;
+    color: var(--white);
+    opacity: .8;
+  }
+
+  .main-content-group {
+    overflow-y: auto;
+  }
+}
