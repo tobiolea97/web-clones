@@ -51,10 +51,13 @@
 
 
 @media screen and (max-width: 950px) {
+<<<<<<< HEAD
   .main-content-group {
     position: relative;
     top: 5rem;
   }
+=======
+>>>>>>> page/mercadolibre
   .main-content-group > div:nth-child(1) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -71,6 +74,7 @@
     opacity: .8;
   }
 
+<<<<<<< HEAD
   .album-card {
     min-width: 15rem;
   }
@@ -79,5 +83,9 @@
     display: flex;
     overflow-x: auto;
     scrollbar-width: none;
+=======
+  .main-content-group {
+    overflow-y: auto;
+>>>>>>> page/mercadolibre
   }
 }

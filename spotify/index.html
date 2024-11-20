@@ -1,443 +1,575 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Spotify - Web Clone</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-</head>
-<body>
-    <div class="page-wrapper no-right-sidebar">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/desktop-view.css" />
+    <link rel="stylesheet" href="css/mobile-view.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+  </head>
+  <body>
+    <div class="desktop-view">
+      <div class="page-wrapper no-right-sidebar">
         <div class="left-sidebar">
-            <div class="home-section">
-                <div class="menu-item">
-                    <img src="images/search-white.png" class="logo">
-                    <h1 class="menu-item">
-                        Search
-                    </h1>
-                </div>
-                <div class="menu-item">
-                    <img src="images/home-white.png" class="logo">
-                    <h1 class="menu-item">
-                        Home
-                    </h1>
-                </div>
+          <div class="home-section">
+            <div class="menu-item">
+              <img src="images/search-white.png" class="logo" />
+              <h1 class="menu-item">Search</h1>
             </div>
-            <div class="albums-section">
-                <div class="menu-item">
-                    <img src="images/albums-white.png" class="logo">
-                    <h1 class="menu-item">
-                        Tu biblioteca
-                    </h1>
-                </div>
-                <div class="albums-container">
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/amapola.jpg" />
-                            <h1>Amapola del 66</h1>
-                            <h2>Album - Divididos</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/sgt-pepper.jpg" />
-                            <h1>Sgt. pepper and the...</h1>
-                            <h2>Album - The Beatles</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/artaud.jpg" />
-                            <h1>Artaud</h1>
-                            <h2>Album - Pescado rabioso</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/audioslave.jpg" />
-                            <h1>Audioslave</h1>
-                            <h2>Album - Audioslave</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/clics-modernos.jpg" />
-                            <h1>Clics Modernos</h1>
-                            <h2>Album - Charly Garcia</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/dark-side-of-the-moon.jpg" />
-                            <h1>Dark side of the moon</h1>
-                            <h2>Album - Pink Floyd</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/despedazado.jpg" />
-                            <h1>Despedazado por mil partes</h1>
-                            <h2>Album - La Renga</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/echoes-silence.jpg" />
-                            <h1>Echose, Silence, Patience & Grace</h1>
-                            <h2>Album - Foo Fighters</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/fuerza-natural.jpg" />
-                            <h1>Fuerza Natural</h1>
-                            <h2>Album - Gustavo Cerati</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/la-mosca-y-la-sopa.jpg" />
-                            <h1>La mosca y la sopa</h1>
-                            <h2>Album - Los Redondos</h2>
-                        </div>
-                    </div>
-                </div>
+            <div class="menu-item">
+              <img src="images/home-white.png" class="logo" />
+              <h1 class="menu-item">Home</h1>
             </div>
+          </div>
+          <div class="albums-section">
+            <div class="menu-item">
+              <img src="images/albums-white.png" class="logo" />
+              <h1 class="menu-item">Tu biblioteca</h1>
+            </div>
+            <div class="albums-container">
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/amapola.jpg" />
+                  <h1>Amapola del 66</h1>
+                  <h2>Album - Divididos</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/sgt-pepper.jpg" />
+                  <h1>Sgt. pepper and the...</h1>
+                  <h2>Album - The Beatles</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/artaud.jpg" />
+                  <h1>Artaud</h1>
+                  <h2>Album - Pescado rabioso</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/audioslave.jpg" />
+                  <h1>Audioslave</h1>
+                  <h2>Album - Audioslave</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/clics-modernos.jpg" />
+                  <h1>Clics Modernos</h1>
+                  <h2>Album - Charly Garcia</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/dark-side-of-the-moon.jpg" />
+                  <h1>Dark side of the moon</h1>
+                  <h2>Album - Pink Floyd</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/despedazado.jpg" />
+                  <h1>Despedazado por mil partes</h1>
+                  <h2>Album - La Renga</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/echoes-silence.jpg" />
+                  <h1>Echose, Silence, Patience & Grace</h1>
+                  <h2>Album - Foo Fighters</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/fuerza-natural.jpg" />
+                  <h1>Fuerza Natural</h1>
+                  <h2>Album - Gustavo Cerati</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/la-mosca-y-la-sopa.jpg" />
+                  <h1>La mosca y la sopa</h1>
+                  <h2>Album - Los Redondos</h2>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="main-content">
-            <div class="top-bar-box">
-                <div class="flex">
-                    <div class="rounded-button">
-                        <img src="images/open-angle-white.png" />
-                    </div>
-                    <div class="rounded-button">
-                        <img src="images/close-angle-white.png" />
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="button">
-                        <img class="sm" src="images/download-white.png" />
-                        <span>Install app</span>
-                    </div>
-                    <div class="flex grow">
-                        <div class="rounded-button">
-                            <img src="images/bell-white.png" />
-                        </div>
-                        <div class="rounded-button profile">
-                            <img src="images/profile-photo.jpg" />
-                        </div>
-                    </div>
-                </div>
+          <div class="top-bar-box">
+            <div class="flex">
+              <div class="rounded-button">
+                <img src="images/open-angle-white.png" />
+              </div>
+              <div class="rounded-button">
+                <img src="images/close-angle-white.png" />
+              </div>
             </div>
-            <div class="grouped-content-wrapper">
-                <div class="main-content-group">
-                    <div>
-                        <div class="menu-item">
-                            <div class="album-item">
-                                <img src="images/amapola.jpg" />
-                                <h1>Amapola del 66</h1>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="album-item">
-                                <img src="images/sgt-pepper.jpg" />
-                                <h1>Sgt. pepper and the...</h1>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="album-item">
-                                <img src="images/artaud.jpg" />
-                                <h1>Artaud</h1>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="album-item">
-                                <img src="images/audioslave.jpg" />
-                                <h1>Audioslave</h1>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="album-item">
-                                <img src="images/clics-modernos.jpg" />
-                                <h1>Clics Modernos</h1>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="album-item">
-                                <img src="images/dark-side-of-the-moon.jpg" />
-                                <h1>Dark side of the moon</h1>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="album-item">
-                                <img src="images/despedazado.jpg" />
-                                <h1>Despedazado por mil partes</h1>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="album-item">
-                                <img src="images/echoes-silence.jpg" />
-                                <h1>Echose, Silence, Patience & Grace</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="top-bar-box">
-                            <h1>Your programmes</h1>
-                            <h2>Show more</h2>
-                        </div>
-                        <div class="album-cards-container">
-                            <div class="album-card">
-                                <img src="images/relaxing-white-noise.jpg" />
-                                <h1>Relaxing White Noise</h1>
-                                <h2>Relaxing White Noise, LLC</h2>
-                            </div>
-                            <div class="album-card">
-                                <img src="images/white-noise-meditation-music.jpg" />
-                                <h1>White Noise Meditation Music</h1>
-                                <h2>White Noise</h2>
-                            </div>
-                            <div class="album-card">
-                                <img src="images/psychology-of-your-20s.jpg" />
-                                <h1>The Psychology of your 20s</h1>
-                                <h2>iHeartPodcasts</h2>
-                            </div>
-                            <div class="album-card">
-                                <img src="images/ciencia-vs.jpg" />
-                                <h1>La Ciencia Vs</h1>
-                                <h2>Spotify Studios</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="top-bar-box">
-                            <h1>Made for Tobi Olea</h1>
-                            <h2>Show more</h2>
-                        </div>
-                        <div class="album-cards-container">
-                            <div class="album-card">
-                                <img src="images/mix-1.jpg" />
-                                <h1>Mix diario 1</h1>
-                                <h2>Virus, Gustavo Cerati, Babasonicos and more</h2>
-                            </div>
-                            <div class="album-card">
-                                <img src="images/mix-3.jpg" />
-                                <h1>Mix diario 3</h1>
-                                <h2>Air, Thievery Corporation, Bonobo and more</h2>
-                            </div>
-                            <div class="album-card">
-                                <img src="images/mix-4.jpg" />
-                                <h1>Mix diario 4</h1>
-                                <h2>Bokki, Corse Cane, Birds Of The West and more</h2>
-                            </div>
-                            <div class="album-card">
-                                <img src="images/mix-5.jpg" />
-                                <h1>Mix diario 5</h1>
-                                <h2>Red Hot Chili Peppers, Audioslave, Soundgarde and more</h2>
-                            </div>
-                        </div>
-                    </div>
+            <div class="flex">
+              <div class="button">
+                <img class="sm" src="images/download-white.png" />
+                <span>Install app</span>
+              </div>
+              <div class="flex grow">
+                <div class="rounded-button">
+                  <img src="images/bell-white.png" />
                 </div>
+                <div class="rounded-button profile">
+                  <img src="images/profile-photo.jpg" />
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="grouped-content-wrapper">
+            <div class="main-content-group">
+              <div>
+                <div class="menu-item">
+                  <div class="album-item">
+                    <img src="images/amapola.jpg" />
+                    <h1>Amapola del 66</h1>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="album-item">
+                    <img src="images/sgt-pepper.jpg" />
+                    <h1>Sgt. pepper and the...</h1>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="album-item">
+                    <img src="images/artaud.jpg" />
+                    <h1>Artaud</h1>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="album-item">
+                    <img src="images/audioslave.jpg" />
+                    <h1>Audioslave</h1>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="album-item">
+                    <img src="images/clics-modernos.jpg" />
+                    <h1>Clics Modernos</h1>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="album-item">
+                    <img src="images/dark-side-of-the-moon.jpg" />
+                    <h1>Dark side of the moon</h1>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="album-item">
+                    <img src="images/despedazado.jpg" />
+                    <h1>Despedazado por mil partes</h1>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <div class="album-item">
+                    <img src="images/echoes-silence.jpg" />
+                    <h1>Echose, Silence, Patience & Grace</h1>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="top-bar-box">
+                  <h1>Your programmes</h1>
+                  <h2>Show more</h2>
+                </div>
+                <div class="album-cards-container">
+                  <div class="album-card">
+                    <img src="images/relaxing-white-noise.jpg" />
+                    <h1>Relaxing White Noise</h1>
+                    <h2>Relaxing White Noise, LLC</h2>
+                  </div>
+                  <div class="album-card">
+                    <img src="images/white-noise-meditation-music.jpg" />
+                    <h1>White Noise Meditation Music</h1>
+                    <h2>White Noise</h2>
+                  </div>
+                  <div class="album-card">
+                    <img src="images/psychology-of-your-20s.jpg" />
+                    <h1>The Psychology of your 20s</h1>
+                    <h2>iHeartPodcasts</h2>
+                  </div>
+                  <div class="album-card">
+                    <img src="images/ciencia-vs.jpg" />
+                    <h1>La Ciencia Vs</h1>
+                    <h2>Spotify Studios</h2>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="top-bar-box">
+                  <h1>Made for Tobi Olea</h1>
+                  <h2>Show more</h2>
+                </div>
+                <div class="album-cards-container">
+                  <div class="album-card">
+                    <img src="images/mix-1.jpg" />
+                    <h1>Mix diario 1</h1>
+                    <h2>Virus, Gustavo Cerati, Babasonicos and more</h2>
+                  </div>
+                  <div class="album-card">
+                    <img src="images/mix-3.jpg" />
+                    <h1>Mix diario 3</h1>
+                    <h2>Air, Thievery Corporation, Bonobo and more</h2>
+                  </div>
+                  <div class="album-card">
+                    <img src="images/mix-4.jpg" />
+                    <h1>Mix diario 4</h1>
+                    <h2>Bokki, Corse Cane, Birds Of The West and more</h2>
+                  </div>
+                  <div class="album-card">
+                    <img src="images/mix-5.jpg" />
+                    <h1>Mix diario 5</h1>
+                    <h2>
+                      Red Hot Chili Peppers, Audioslave, Soundgarde and more
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="now-playing-bar">
-            <div class="now-playing-wrapper">
-                <div>
-                    <div class="album-item">
-                        <img src="images/clics-modernos.jpg" />
-                        <h1>Nos Siguen Pegando Abajo</h1>
-                        <h2>Charly Garcia</h2>
-                        <img class="green-mark" src="images/green-mark.png" />
-                    </div>
-                </div>
-                <div>
-                    <div class="play-panel">
-                        <div class="buttons">
-                            <img src="images/shuffle-white.png">
-                            <img src="images/previous-white.png">
-                            <img src="images/play-white.png">
-                            <img src="images/next-white.png">
-                            <img src="images/repeat-white.png">
-                        </div>
-                        <div class="playing">
-                            <span>2:12</span>
-                            <div class="progress-bar">
-                                <div class="progress-bar-completed" style="width: 50%;"></div>
-                            </div>
-                            <span>4:35</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="buttons-wrapper">
-                    <div class="flex">
-                        <div class="flex column">
-                            <img id="toogleShowPlayingInfoBtn" class="sm" src="images/now-playing-white.png" >
-                            <img id="toogleShowPlayingInfoDot" src="images/dot-green.png" class="xs4" style="visibility: hidden;">
-                        </div>
-                        <div class="flex column">
-                            <img class="sm" src="images/microphone-white.png" >
-                            <img src="images/dot-green.png" class="xs4" style="visibility: hidden;">
-                        </div>
-                        <div class="flex column">
-                            <img id="toogleShowPlayingQueueBtn" class="sm" src="images/play-queue-white.png" >
-                            <img id="toogleShowPlayingQueueDot" src="images/dot-green.png" class="xs4" style="visibility: hidden;">
-                        </div>
-                        <div class="flex column">
-                            <img class="sm" src="images/devices-white.png" >
-                            <img src="images/dot-green.png" class="xs4" style="visibility: hidden;">
-                        </div>
-                        <div class="flex column">
-                            <img class="sm" src="images/volume-white.png" >
-                            <img src="images/dot-green.png" class="xs4" style="visibility: hidden;">
-                        </div>
-                        <div class="flex column">
-                            <div class="progress-bar mr-1">
-                                <div class="progress-bar-completed" style="width: 50%;"></div>
-                            </div>
-                            <img src="images/dot-green.png" class="xs4" style="visibility: hidden;">
-                        </div>
-                        <div class="flex column">
-                            <img class="sm" src="images/miniature-white.png" >
-                            <img src="images/dot-green.png" class="xs4" style="visibility: hidden;">
-                        </div>
-                        <div class="flex column">
-                            <img class="sm" src="images/expand-white.png" >
-                            <img src="images/dot-green.png" class="xs4" style="visibility: hidden;">
-                        </div>
-                    </div>
-                </div>
+          <div class="now-playing-wrapper">
+            <div>
+              <div class="album-item">
+                <img src="images/clics-modernos.jpg" />
+                <h1>Nos Siguen Pegando Abajo</h1>
+                <h2>Charly Garcia</h2>
+                <img class="green-mark" src="images/green-mark.png" />
+              </div>
             </div>
+            <div>
+              <div class="play-panel">
+                <div class="buttons">
+                  <img src="images/shuffle-white.png" />
+                  <img src="images/previous-white.png" />
+                  <img src="images/play-white.png" />
+                  <img src="images/next-white.png" />
+                  <img src="images/repeat-white.png" />
+                </div>
+                <div class="playing">
+                  <span>2:12</span>
+                  <div class="progress-bar">
+                    <div
+                      class="progress-bar-completed"
+                      style="width: 50%"
+                    ></div>
+                  </div>
+                  <span>4:35</span>
+                </div>
+              </div>
+            </div>
+            <div class="buttons-wrapper">
+              <div class="flex">
+                <div class="flex column">
+                  <img
+                    id="toogleShowPlayingInfoBtn"
+                    class="sm"
+                    src="images/now-playing-white.png"
+                  />
+                  <img
+                    id="toogleShowPlayingInfoDot"
+                    src="images/dot-green.png"
+                    class="xs4"
+                    style="visibility: hidden"
+                  />
+                </div>
+                <div class="flex column">
+                  <img class="sm" src="images/microphone-white.png" />
+                  <img
+                    src="images/dot-green.png"
+                    class="xs4"
+                    style="visibility: hidden"
+                  />
+                </div>
+                <div class="flex column">
+                  <img
+                    id="toogleShowPlayingQueueBtn"
+                    class="sm"
+                    src="images/play-queue-white.png"
+                  />
+                  <img
+                    id="toogleShowPlayingQueueDot"
+                    src="images/dot-green.png"
+                    class="xs4"
+                    style="visibility: hidden"
+                  />
+                </div>
+                <div class="flex column">
+                  <img class="sm" src="images/devices-white.png" />
+                  <img
+                    src="images/dot-green.png"
+                    class="xs4"
+                    style="visibility: hidden"
+                  />
+                </div>
+                <div class="flex column">
+                  <img class="sm" src="images/volume-white.png" />
+                  <img
+                    src="images/dot-green.png"
+                    class="xs4"
+                    style="visibility: hidden"
+                  />
+                </div>
+                <div class="flex column">
+                  <div class="volume-bar mr-1">
+                    <div
+                      class="progress-bar-completed"
+                      style="width: 50%"
+                    ></div>
+                  </div>
+                  <img
+                    src="images/dot-green.png"
+                    class="xs4"
+                    style="visibility: hidden"
+                  />
+                </div>
+                <div class="flex column">
+                  <img class="sm" src="images/miniature-white.png" />
+                  <img
+                    src="images/dot-green.png"
+                    class="xs4"
+                    style="visibility: hidden"
+                  />
+                </div>
+                <div class="flex column">
+                  <img class="sm" src="images/expand-white.png" />
+                  <img
+                    src="images/dot-green.png"
+                    class="xs4"
+                    style="visibility: hidden"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="right-sidebar" id="now-playing-queue">
-            <div class="right-sidebar-wrapper">
-                <div class="flex space-bewteen mb-4">
-                    <h1>Play queue</h1>
-                    <img id="closePlayingQueueBtn" class="xs2 opacity-05 pointer" src="images/x-white.png">
-                </div>
-                <div class="albums-container">
-                    <div>
-                        <h1>You are listening</h1>
-                    </div>
-                    <div class="menu-item mb-4">
-                        <div class="album-item">
-                            <img src="images/clics-modernos.jpg" />
-                            <h1>Nos Siguen Pegando Abajo</h1>
-                            <h2>Charly Garcia</h2>
-                        </div>
-                    </div>
-                    <div>
-                        <h1>Next songs of: Clics Modernos</h1>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/clics-modernos.jpg" />
-                            <h1>No Soy Un Extraño</h1>
-                            <h2>Charly Garcia</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/clics-modernos.jpg" />
-                            <h1>Dos Cero Uno</h1>
-                            <h2>Charly Garcia</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/clics-modernos.jpg" />
-                            <h1>Nuevos Trapos</h1>
-                            <h2>Charly Garcia</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">    
-                        <div class="album-item">
-                            <img src="images/clics-modernos.jpg" />
-                            <h1>Bancate Ese Defecto</h1>
-                            <h2>Charly Garcia</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/clics-modernos.jpg" />
-                            <h1>No Me Dejan Salir</h1>
-                            <h2>Charly Garcia</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/clics-modernos.jpg" />
-                            <h1>Los Dinosaurios</h1>
-                            <h2>Charly Garcia</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/clics-modernos.jpg" />
-                            <h1>Plateado Sobre Plateado</h1>
-                            <h2>Charly Garcia</h2>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="album-item">
-                            <img src="images/clics-modernos.jpg" />
-                            <h1>Ojos De Video Tape</h1>
-                            <h2>Charly Garcia</h2>
-                        </div>
-                    </div>
-                </div>
+          <div class="right-sidebar-wrapper">
+            <div class="flex space-bewteen mb-4">
+              <h1>Play queue</h1>
+              <img
+                id="closePlayingQueueBtn"
+                class="xs2 opacity-05 pointer"
+                src="images/x-white.png"
+              />
             </div>
+            <div class="albums-container">
+              <div>
+                <h1>You are listening</h1>
+              </div>
+              <div class="menu-item mb-4">
+                <div class="album-item">
+                  <img src="images/clics-modernos.jpg" />
+                  <h1>Nos Siguen Pegando Abajo</h1>
+                  <h2>Charly Garcia</h2>
+                </div>
+              </div>
+              <div>
+                <h1>Next songs of: Clics Modernos</h1>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/clics-modernos.jpg" />
+                  <h1>No Soy Un Extraño</h1>
+                  <h2>Charly Garcia</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/clics-modernos.jpg" />
+                  <h1>Dos Cero Uno</h1>
+                  <h2>Charly Garcia</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/clics-modernos.jpg" />
+                  <h1>Nuevos Trapos</h1>
+                  <h2>Charly Garcia</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/clics-modernos.jpg" />
+                  <h1>Bancate Ese Defecto</h1>
+                  <h2>Charly Garcia</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/clics-modernos.jpg" />
+                  <h1>No Me Dejan Salir</h1>
+                  <h2>Charly Garcia</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/clics-modernos.jpg" />
+                  <h1>Los Dinosaurios</h1>
+                  <h2>Charly Garcia</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/clics-modernos.jpg" />
+                  <h1>Plateado Sobre Plateado</h1>
+                  <h2>Charly Garcia</h2>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="album-item">
+                  <img src="images/clics-modernos.jpg" />
+                  <h1>Ojos De Video Tape</h1>
+                  <h2>Charly Garcia</h2>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="right-sidebar" id="now-playing-info">
-            <div class="right-sidebar-wrapper">
-                <div class="albums-container">
-                    <div class="flex space-bewteen mb-2">
-                        <h1>Nos Siguen Pegando Abajo</h1>
-                        <img id="closePlayingInfoBtn" class="xs2 opacity-05 pointer" src="images/x-white.png">
-                    </div>
-                    <img class="cover-image" src="images/clics-modernos.jpg" />
-                    <div class="album-item-without-image mb-3">
-                        <h1>Nos Siguen Pegando Abajo</h1>
-                        <h2>Charly Garcia</h2>
-                        <img class="green-mark" src="images/green-mark.png" />
-                    </div>
-                    <div class="artist-information-panel">
-                        <h2 class="mb-1">About the artist</h2>
-                        <img class="mb-1" src="images/charly-garcia.jpg">
-                        <h1 class="mb-1">Charly Garcia</h1>
-                        <div class="flex space-bewteen mb-1">
-                            <h3>3,065,493 monthly listeners</h3>
-                            <div class="transparent-button">
-                                <span>Follow</span>
-                            </div>
-                        </div>
-                        <p>Charly García is one of the most talented and influential figures of Argentine and Latin rock. He composed many generational songs and was obsessed with expanding...</p>
-                    </div>
-                    <div class="artist-information-panel">
-                        <div class="flex space-bewteen mb-2">
-                            <h2 class="mb-1">Credits</h2>
-                            <h4>Show All</h4>
-                        </div>
-                        <div class="credit-item flex space-bewteen">
-                            <div class="flex column">
-                                <h2>Charly Garcia</h2>
-                                <p>Composer, Main artist, Producer</p>
-                            </div>
-                            <div class="transparent-button">
-                                <span>Follow</span>
-                            </div>
-                        </div>
-                        <div class="credit-item flex space-bewteen">
-                            <div class="flex column">
-                                <h2>Todd Rundgrem</h2>
-                                <p>Composer</p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="right-sidebar-wrapper">
+            <div class="albums-container">
+              <div class="flex space-bewteen mb-2">
+                <h1>Nos Siguen Pegando Abajo</h1>
+                <img
+                  id="closePlayingInfoBtn"
+                  class="xs2 opacity-05 pointer"
+                  src="images/x-white.png"
+                />
+              </div>
+              <img class="cover-image" src="images/clics-modernos.jpg" />
+              <div class="album-item-without-image mb-3">
+                <h1>Nos Siguen Pegando Abajo</h1>
+                <h2>Charly Garcia</h2>
+                <img class="green-mark" src="images/green-mark.png" />
+              </div>
+              <div class="artist-information-panel">
+                <h2 class="mb-1">About the artist</h2>
+                <img class="mb-1" src="images/charly-garcia.jpg" />
+                <h1 class="mb-1">Charly Garcia</h1>
+                <div class="flex space-bewteen mb-1">
+                  <h3>3,065,493 monthly listeners</h3>
+                  <div class="transparent-button">
+                    <span>Follow</span>
+                  </div>
                 </div>
+                <p>
+                  Charly García is one of the most talented and influential
+                  figures of Argentine and Latin rock. He composed many
+                  generational songs and was obsessed with expanding...
+                </p>
+              </div>
+              <div class="artist-information-panel">
+                <div class="flex space-bewteen mb-2">
+                  <h2 class="mb-1">Credits</h2>
+                  <h4>Show All</h4>
+                </div>
+                <div class="credit-item flex space-bewteen">
+                  <div class="flex column">
+                    <h2>Charly Garcia</h2>
+                    <p>Composer, Main artist, Producer</p>
+                  </div>
+                  <div class="transparent-button">
+                    <span>Follow</span>
+                  </div>
+                </div>
+                <div class="credit-item flex space-bewteen">
+                  <div class="flex column">
+                    <h2>Todd Rundgrem</h2>
+                    <p>Composer</p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-    <script src="scripts.js"></script>
+    <div class="mobile-view">
+      <div class="mobile-header">
+        <div class="rounded-button profile">
+          <img src="images/profile-photo.jpg" />
+        </div>
+        <div class="mobile-button bg-green">
+          <span class="black">All</span>
+        </div>
+        <div class="mobile-button bg-grey">
+          <span class="white">Music</span>
+        </div>
+        <div class="mobile-button bg-grey">
+          <span class="white">Podcasts</span>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-group">
+      <div class="albums-container">
+        <div class="menu-item">
+          <div class="album-item">
+            <img src="images/amapola.jpg" />
+            <h1>Amapola del 66</h1>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="album-item">
+            <img src="images/sgt-pepper.jpg" />
+            <h1>Sgt. Pepper's Lonely Hearts Club Band</h1>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="album-item">
+            <img src="images/artaud.jpg" />
+            <h1>Artaud</h1>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="album-item">
+            <img src="images/audioslave.jpg" />
+            <h1>Audioslave</h1>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="album-item">
+            <img src="images/clics-modernos.jpg" />
+            <h1>Clics Modernos</h1>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="album-item">
+            <img src="images/dark-side-of-the-moon.jpg" />
+            <h1>Dark side of the moon</h1>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="album-item">
+            <img src="images/despedazado.jpg" />
+            <h1>Despedazado por mil partes</h1>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="album-item">
+            <img src="images/echoes-silence.jpg" />
+            <h1>Echose, Silence, Patience & Grace</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="scripts.js"></script>
 </html>
-

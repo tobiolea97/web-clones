@@ -1,4 +1,3 @@
-import React from 'react'
 import { RouterProvider } from "react-router-dom";
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
@@ -11,5 +10,5 @@ const root = createRoot(container)
 root.render(
   <Provider store={store}>
     <RouterProvider router={router} />
-  </Provider>,
+  </Provider>
 )
