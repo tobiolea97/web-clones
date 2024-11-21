@@ -1,9 +1,4 @@
-@charset "utf-8"; /*
- * Navigation
- * @platform "mercadolibre"
- * @version 6.6.92
- * @author MercadoLibre.com
- */
+@charset "utf-8";
 @font-face {
   font-family: "navigation";
   src: url("https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.92/mercadolibre/navigation.eot");
@@ -3094,4 +3089,3 @@ button.nav-search-btn:focus:before {
   justify-content: flex-start;
   align-items: center;
 }
-
