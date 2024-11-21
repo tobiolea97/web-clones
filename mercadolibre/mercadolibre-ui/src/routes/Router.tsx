@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Root from "./root.tsx";
+import Root from "./Root.tsx";
 import Landing from "../views/landing/index.tsx";
 import Login from "../views/login/index.tsx";
 import Cart from "../views/cart/index.tsx";
