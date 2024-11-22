@@ -1,4 +1,4 @@
-import { NavBar } from "../../components/layout/nav-bar";
+import NavBar from "../../components/layout/nav-bar";
 
 const Search = () => {
   return (
