@@ -1,8 +1,6 @@
-// import { Link } from "react-router-dom";
+import "./styles.css"
 
-// import "../../../styles/global.css";
-
-export const NavBar = () => {
+const NavBar = () => {
   return (
     <header className="nav-header nav-header-plus ui-navigation-v2">
       <div className="nav-bounds nav-bounds-with-cart">
@@ -581,3 +579,5 @@ export const NavBar = () => {
     </header>
   );
 };
+
+export default NavBar;
