@@ -1,4 +1,10 @@
+
+import NavBarMenuItem from "./NavBarMenuItem";
+import { menuItems } from "./NavBarMockedData";
+
 const NavBarMenu = () => {
+  
+
   return (
     <div className="nav-area nav-bottom-area nav-center-area">
       <div className="nav-menu">
@@ -365,72 +371,11 @@ const NavBarMenu = () => {
                   </div>
                 </div> */}
           </li>
-          <li className="nav-menu-item">
-            <a
-              href="https://www.mercadolibre.com.ar/ofertas#nav-header"
-              className="nav-menu-item-link"
-              rel=""
-            >
-              Ofertas
-            </a>
-          </li>
-          <li className="nav-menu-item">
-            <a
-              href="https://www.mercadolibre.com.ar/cupones?source_page=mperfil#nav-header"
-              className="nav-menu-item-link"
-              rel="nofollow"
-            >
-              Cupones
-            </a>
-          </li>
-          <li className="nav-menu-item">
-            <a
-              href="https://www.mercadolibre.com.ar/ofertas/supermercadolibre#nav-header"
-              className="nav-menu-item-link"
-              rel=""
-            >
-              Supermercado
-            </a>
-          </li>
-          <li className="nav-menu-item">
-            <a
-              href="https://www.mercadolibre.com.ar/c/ropa-y-accesorios#nav-header"
-              className="nav-menu-item-link"
-              rel=""
-            >
-              Moda
-            </a>
-          </li>
-          <li className="nav-menu-item">
-            <a
-              href="https://play.mercadolibre.com.ar/?origin=navigation_menu_web#nav-header"
-              className="nav-menu-item-link"
-              rel=""
-            >
-              Mercado Play
-              <span className="nav-link-tag nav-link-tag--small mplay">
-                Gratis
-              </span>
-            </a>
-          </li>
-          <li className="nav-menu-item">
-            <a
-              href="https://www.mercadolibre.com.ar/syi/core/list#nav-header"
-              className="nav-menu-item-link"
-              rel=""
-            >
-              Vender
-            </a>
-          </li>
-          <li className="nav-menu-item">
-            <a
-              href="https://www.mercadolibre.com.ar/ayuda#nav-header"
-              className="nav-menu-item-link"
-              rel=""
-            >
-              Ayuda
-            </a>
-          </li>
+          {menuItems.map((item) => (
+            <NavBarMenuItem href={item.url}>
+              {item.label}
+            </NavBarMenuItem>
+          ))}
         </ul>
       </div>
     </div>
