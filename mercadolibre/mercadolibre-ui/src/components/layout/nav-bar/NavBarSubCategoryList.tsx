@@ -22,7 +22,7 @@ const NavBarSubCategoryItem: React.FC<NavBarSubCategoryProps> = ({
       //   tabindex="-1"
       role="dialog"
       aria-label="Tecnología"
-      hidden=""
+      hidden="hidden"
     >
       {
         <header className="nav-categs-detail__header">
