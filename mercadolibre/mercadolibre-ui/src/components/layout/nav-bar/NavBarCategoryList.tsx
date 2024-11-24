@@ -8,8 +8,9 @@ interface NavBarMenuProps {
 }
 
 const NavBarCategoryList = ({ isMenuOpen }: NavBarMenuProps) => {
-
   const [isPointerOver, setIsPointerOver] = useState(false);
+  const [isPointerOverSubcategory, setIsPointerOverSubcategory] =
+    useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -31,9 +32,15 @@ const NavBarCategoryList = ({ isMenuOpen }: NavBarMenuProps) => {
     >
       <ul className="nav-categs-departments" data-js="nav-categs-departments">
         {categories.map((category, index) => (
-          <NavBarCategoryItem href={category.url} key={index}>
-            {category.label}
-          </NavBarCategoryItem>
+          <div
+            onMouseEnter={() => setIsPointerOverSubcategory(category.hasSubcategories ? true : false)}
+            onMouseLeave={() => setIsPointerOverSubcategory(false)}
+            key={index}
+          >
+            <NavBarCategoryItem href={category.url}>
+              {category.label}
+            </NavBarCategoryItem>
+          </div>
         ))}
       </ul>
       {subcategories.map((subcategory, index) => (
@@ -41,6 +48,7 @@ const NavBarCategoryList = ({ isMenuOpen }: NavBarMenuProps) => {
           group={subcategory.group}
           subcategories={subcategory.subcategories}
           key={index}
+          isPointerOverSubcategory={isPointerOverSubcategory}
         />
       ))}
     </div>
