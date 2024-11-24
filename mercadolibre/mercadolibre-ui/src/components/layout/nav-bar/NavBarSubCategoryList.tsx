@@ -7,11 +7,13 @@ interface NavBarSubCategoryItemProps {
 interface NavBarSubCategoryProps {
   group: string;
   subcategories: NavBarSubCategoryItemProps[];
+  isPointerOverSubcategory: boolean;
 }
 
 const NavBarSubCategoryItem: React.FC<NavBarSubCategoryProps> = ({
   group,
   subcategories,
+  isPointerOverSubcategory
 }) => {
   return (
     <div
@@ -22,7 +24,7 @@ const NavBarSubCategoryItem: React.FC<NavBarSubCategoryProps> = ({
       //   tabindex="-1"
       role="dialog"
       aria-label="Tecnología"
-      hidden="hidden"
+      hidden= {isPointerOverSubcategory ? "" : "hidden"}
     >
       {
         <header className="nav-categs-detail__header">

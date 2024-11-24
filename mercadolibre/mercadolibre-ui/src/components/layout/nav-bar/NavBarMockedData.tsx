@@ -58,6 +58,7 @@ const categories = [
     id: 4,
     label: "Tecnología",
     url: "#/",
+    hasSubcategories: true
   },
   {
     id: 5,
