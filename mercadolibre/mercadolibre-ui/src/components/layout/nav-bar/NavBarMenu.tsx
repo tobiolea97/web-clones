@@ -7,9 +7,9 @@ const NavBarMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="nav-area nav-bottom-area nav-center-area">
-      <div className="nav-menu">
-        <ul className="nav-menu-list">
+    <div className="nav-area nav-bottom-area nav-center-area" onMouseEnter={() => setIsMenuOpen(false)}>
+      <div className="nav-menu" onMouseEnter={() => setIsMenuOpen(false)}>
+        <ul className="nav-menu-list" onMouseEnter={() => setIsMenuOpen(false)}>
           <li
             className="nav-menu-item"
             onMouseEnter={() => setIsMenuOpen(true)}

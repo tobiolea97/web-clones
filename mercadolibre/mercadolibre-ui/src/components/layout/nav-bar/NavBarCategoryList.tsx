@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NavBarCategoryItem from "./NavBarCategoryItem";
 import { categories, subcategories } from "./NavBarMockedData";
-import NavBarSubCategoryItem from "./NavBarSubCategoryList";
+import NavBarSubCategoryList from "./NavBarSubCategoryList";
 
 interface NavBarMenuProps {
   isMenuOpen: boolean;
@@ -32,19 +32,17 @@ const NavBarCategoryList = ({ isMenuOpen }: NavBarMenuProps) => {
     >
       <ul className="nav-categs-departments" data-js="nav-categs-departments">
         {categories.map((category, index) => (
-          <div
-            onMouseEnter={() => setIsPointerOverSubcategory(category.hasSubcategories ? true : false)}
-            onMouseLeave={() => setIsPointerOverSubcategory(false)}
+          <NavBarCategoryItem
+            href={category.url}
             key={index}
+            onPointerChange={category.hasSubcategories ? setIsPointerOverSubcategory : undefined}
           >
-            <NavBarCategoryItem href={category.url}>
-              {category.label}
-            </NavBarCategoryItem>
-          </div>
+            {category.label}
+          </NavBarCategoryItem>
         ))}
       </ul>
       {subcategories.map((subcategory, index) => (
-        <NavBarSubCategoryItem
+        <NavBarSubCategoryList
           group={subcategory.group}
           subcategories={subcategory.subcategories}
           key={index}

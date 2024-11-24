@@ -10,7 +10,7 @@ interface NavBarSubCategoryProps {
   isPointerOverSubcategory: boolean;
 }
 
-const NavBarSubCategoryItem: React.FC<NavBarSubCategoryProps> = ({
+const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
   group,
   subcategories,
   isPointerOverSubcategory
@@ -67,5 +67,5 @@ const NavBarSubCategoryItem: React.FC<NavBarSubCategoryProps> = ({
   );
 };
 
-export default NavBarSubCategoryItem;
+export default NavBarSubCategoryList;
 
