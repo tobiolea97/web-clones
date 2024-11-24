@@ -9,8 +9,7 @@ interface NavBarMenuProps {
 
 const NavBarCategoryList = ({ isMenuOpen }: NavBarMenuProps) => {
   const [isPointerOver, setIsPointerOver] = useState(false);
-  const [isPointerOverSubcategory, setIsPointerOverSubcategory] =
-    useState(false);
+  const [isPointerOverSubcategory, setIsPointerOverSubcategory] = useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -36,6 +35,7 @@ const NavBarCategoryList = ({ isMenuOpen }: NavBarMenuProps) => {
             href={category.url}
             key={index}
             onPointerChange={category.hasSubcategories ? setIsPointerOverSubcategory : undefined}
+            isPointerOverSubcategory={isPointerOverSubcategory}
           >
             {category.label}
           </NavBarCategoryItem>

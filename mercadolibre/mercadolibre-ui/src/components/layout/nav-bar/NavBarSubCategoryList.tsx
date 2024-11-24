@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface NavBarSubCategoryItemProps {
   id: number;
   name: string;
@@ -8,13 +10,16 @@ interface NavBarSubCategoryProps {
   group: string;
   subcategories: NavBarSubCategoryItemProps[];
   isPointerOverSubcategory: boolean;
+  setIsPointerOverSubcategory?: (isPointerOverSubcategory: boolean) => void;
 }
 
 const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
   group,
   subcategories,
-  isPointerOverSubcategory
+  isPointerOverSubcategory,
 }) => {
+  const [isPointerOver, setIsPointerOver] = useState(false);
+
   return (
     <div
       className="nav-categs-detail"
@@ -24,7 +29,9 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
       //   tabindex="-1"
       role="dialog"
       aria-label="Tecnología"
-      hidden= {isPointerOverSubcategory ? "" : "hidden"}
+      onMouseEnter={() => setIsPointerOver(true)}
+      onMouseLeave={() => setIsPointerOver(false)}
+      hidden={isPointerOverSubcategory || isPointerOver ? "" : "hidden"}
     >
       {
         <header className="nav-categs-detail__header">
@@ -68,4 +75,3 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
 };
 
 export default NavBarSubCategoryList;
-
