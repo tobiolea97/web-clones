@@ -32,15 +32,9 @@ const NavBarCategoryList = ({ isMenuOpen }: NavBarMenuProps) => {
     >
       <ul className="nav-categs-departments" data-js="nav-categs-departments">
         {categories.map((category, index) => (
-          <div
-            onMouseEnter={() => setIsPointerOverSubcategory(category.hasSubcategories ? true : false)}
-            onMouseLeave={() => setIsPointerOverSubcategory(false)}
-            key={index}
-          >
-            <NavBarCategoryItem href={category.url}>
-              {category.label}
-            </NavBarCategoryItem>
-          </div>
+          <NavBarCategoryItem href={category.url} key={index}>
+            {category.label}
+          </NavBarCategoryItem>
         ))}
       </ul>
       {subcategories.map((subcategory, index) => (
