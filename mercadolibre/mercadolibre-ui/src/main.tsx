@@ -8,7 +8,7 @@ import "./index.css";
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
-  <Provider store={store}>
+  // <Provider store={store}>
     <RouterProvider router={router} />
-  </Provider>
+  // </Provider>
 );
