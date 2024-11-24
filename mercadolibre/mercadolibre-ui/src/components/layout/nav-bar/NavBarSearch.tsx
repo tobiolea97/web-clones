@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 const NavBarSearch = () => {
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+
   return (
     <div className="nav-area nav-top-area nav-center-area">
       <form
@@ -17,6 +25,7 @@ const NavBarSearch = () => {
           name="as_word"
           placeholder="Buscar productos, marcas y más…"
           value=""
+          onChange={handleSearch}
           aria-activedescendant=""
           aria-controls="sb-suggestions-1"
           aria-autocomplete="list"

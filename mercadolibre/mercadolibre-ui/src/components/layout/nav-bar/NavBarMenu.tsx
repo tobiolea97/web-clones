@@ -20,8 +20,8 @@ const NavBarMenu = () => {
             </a>
             <NavBarCategoryList />
           </li>
-          {menuItems.map((item) => (
-            <NavBarMenuItem href={item.url}>{item.label}</NavBarMenuItem>
+          {menuItems.map((item, index) => (
+            <NavBarMenuItem href={item.url} key={index}>{item.label}</NavBarMenuItem>
           ))}
         </ul>
       </div>

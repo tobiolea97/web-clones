@@ -9,22 +9,22 @@ const NavBarCategoryList = () => {
       data-js="nav-categs"
       aria-label="Categorías"
       aria-modal="true"
-      tabindex="-1"
+      // tabindex="-1"
       role="dialog"
       hidden=""
     >
       <ul className="nav-categs-departments" data-js="nav-categs-departments">
-        {categories.map((category) => (
-          <NavBarCategoryItem href={category.url}>
+        {categories.map((category, index) => (
+          <NavBarCategoryItem href={category.url} key={index}>
             {category.label}
           </NavBarCategoryItem>
         ))}
       </ul>
-      {subcategories.map((subcategory) => (
-        console.log(subcategory),
+      {subcategories.map((subcategory, index) => (
         <NavBarSubCategoryItem
           group={subcategory.group}
           subcategories={subcategory.subcategories}
+          key={index}
         />
       ))}
     </div>
