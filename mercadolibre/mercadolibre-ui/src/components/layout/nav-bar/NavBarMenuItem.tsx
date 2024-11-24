@@ -1,4 +1,3 @@
-
 interface NavBarMenuItemProps {
   href: string;
   children: React.ReactNode;
