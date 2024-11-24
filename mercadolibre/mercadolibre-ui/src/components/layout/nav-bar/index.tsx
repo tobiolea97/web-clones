@@ -1,25 +1,24 @@
-import { Link } from "react-router-dom";
+import "./styles.css"
+import NavBarLogoComponent from "./NavBarLogoComponent";
+import NavBarSearch from "./NavBarSearch";
+import NavBarPromotionalBanner from "./NavBarPromotionalBanner";
+import NavBarSendTo from "./NavBarSendTo";
+import NavBarMenu from "./NavBarMenu";
+import NavBarUserMenu from "./NavBarUserMenu";
 
-export const NavBar = () => {
+const NavBar = () => {
   return (
-    <div className="flex space-between bg-customYellow">
-      <div className="h-100 w-48">
-        <img src="./header/logo.png" alt="Logo 25 años" />
+    <header className="nav-header nav-header-plus ui-navigation-v2">
+      <div className="nav-bounds nav-bounds-with-cart">
+        <NavBarLogoComponent />
+        <NavBarSearch />
+        <NavBarPromotionalBanner />
+        <NavBarSendTo />
+        <NavBarMenu />
+        <NavBarUserMenu />
       </div>
-      <div className="flex-row space-between bg-customYellow">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/home">Home</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-              <Link to="/cart">Cart</Link>
-              <Link to="/search">Search</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+    </header>
   );
 };
+
+export default NavBar;
