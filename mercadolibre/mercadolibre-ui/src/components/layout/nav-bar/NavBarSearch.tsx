@@ -24,7 +24,7 @@ const NavBarSearch = () => {
           id="cb1-edit"
           name="as_word"
           placeholder="Buscar productos, marcas y más…"
-          value=""
+          value={searchValue}
           onChange={handleSearch}
           aria-activedescendant=""
           aria-controls="sb-suggestions-1"
