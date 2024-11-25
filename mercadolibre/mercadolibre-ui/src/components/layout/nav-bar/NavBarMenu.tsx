@@ -5,11 +5,30 @@ import { menuItems } from "./NavBarMockedData";
 
 const NavBarMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPointerOver, setIsPointerOver] = useState(false);
 
   return (
-    <div className="nav-area nav-bottom-area nav-center-area" onMouseEnter={() => setIsMenuOpen(false)}>
-      <div className="nav-menu" onMouseEnter={() => setIsMenuOpen(false)}>
-        <ul className="nav-menu-list" onMouseEnter={() => setIsMenuOpen(false)}>
+    <div
+      className="nav-area nav-bottom-area nav-center-area"
+      onMouseEnter={() => {
+        setIsMenuOpen(false);
+        setIsPointerOver(false);
+      }}
+    >
+      <div
+        className="nav-menu"
+        onMouseEnter={() => {
+          setIsMenuOpen(false);
+          setIsPointerOver(false);
+        }}
+      >
+        <ul
+          className="nav-menu-list"
+          onMouseEnter={() => {
+            setIsMenuOpen(false);
+            setIsPointerOver(false);
+          }}
+        >
           <li
             className="nav-menu-item"
             onMouseEnter={() => setIsMenuOpen(true)}
@@ -25,7 +44,11 @@ const NavBarMenu = () => {
             >
               Categorías
             </a>
-            <NavBarCategoryList isMenuOpen={isMenuOpen} />
+            <NavBarCategoryList
+              isMenuOpen={isMenuOpen}
+              isPointerOver={isPointerOver}
+              setIsPointerOver={setIsPointerOver}
+            />
           </li>
           {menuItems.map((item, index) => (
             <NavBarMenuItem href={item.url} key={index}>
