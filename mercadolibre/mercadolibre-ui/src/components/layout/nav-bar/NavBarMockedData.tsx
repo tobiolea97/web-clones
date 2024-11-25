@@ -58,7 +58,61 @@ const categories = [
     id: 4,
     label: "Tecnología",
     url: "#/",
-    hasSubcategories: true
+    hasSubcategories: true,
+    subcategories: [
+      {
+        id: 1,
+        name: "Celulares y Teléfonos",
+        items: [
+          "Celulares y Smartphones",
+          "Accesorios para Celulares",
+          "Repuestos de Celulares",
+        ],
+      },
+      {
+        id: 2,
+        name: "Computación",
+        items: [
+          "Componentes de PC",
+          "Impresión",
+          "Tablets y Accesorios",
+          "PC",
+          "Conectividad y Redes",
+          "Monitores y Accesorios",
+        ],
+      },
+      {
+        id: 3,
+        name: "Cámaras y Accesorios",
+        items: [
+          "Cámaras Digitales",
+          "Accesorios para Cámaras",
+          "Filmadoras y Cámaras de Acción",
+        ],
+      },
+      {
+        id: 4,
+        name: "Electrónica, Audio y Video",
+        items: [
+          "Audio",
+          "Accesorios para Audio y Video",
+          "Componentes Electrónicos",
+          "Drones y Accesorios",
+          "Audio para Vehículos",
+          "Televisores",
+        ],
+      },
+      {
+        id: 5,
+        name: "Consolas y Videojuegos",
+        items: ["Videojuegos", "Para PlayStation", "Para Nintendo"],
+      },
+      {
+        id: 6,
+        name: "Televisores",
+        items: [],
+      },
+    ],
   },
   {
     id: 5,
@@ -94,6 +148,27 @@ const categories = [
     id: 11,
     label: "Moda",
     url: "https://www.mercadolibre.com.ar/c/ropa-y-accesorios#menu=categories",
+    hasSubcategories: true,
+    subcategories: [
+      {
+        id: 1,
+        name: "Remeras",
+        items: [
+          "Hombre",
+          "Mujer",
+          "Niños",
+        ],
+      },
+      {
+        id: 2,
+        name: "Pantalones",
+        items: [
+          "Fiteness",
+          "Cargo",
+          "Bermudas",
+        ],
+      },
+    ],
   },
   {
     id: 12,
@@ -154,7 +229,7 @@ const categories = [
 
 const subcategories = [
   {
-    group: "Technology",
+    group: "Tecnología",
     subcategories: [
       {
         id: 1,

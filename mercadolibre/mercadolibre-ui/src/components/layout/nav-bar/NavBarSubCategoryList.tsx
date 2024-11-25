@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { categories } from "./NavBarMockedData";
 
 interface NavBarSubCategoryItemProps {
   id: number;
@@ -7,18 +8,27 @@ interface NavBarSubCategoryItemProps {
 }
 
 interface NavBarSubCategoryProps {
-  group: string;
-  subcategories: NavBarSubCategoryItemProps[];
-  isPointerOverSubcategory: boolean;
+  hoveredCategory: number;
+  isPointerOverSubcategory?: boolean;
   setIsPointerOverSubcategory?: (isPointerOverSubcategory: boolean) => void;
 }
 
 const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
-  group,
-  subcategories,
+  hoveredCategory,
   isPointerOverSubcategory,
 }) => {
   const [isPointerOver, setIsPointerOver] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState<any>();
+  useEffect(() => {
+    if (hoveredCategory !== 0) {
+      const category = categories.find(
+        (category) => category.id === hoveredCategory
+      );
+      setCurrentCategory(
+        category && category.hasSubcategories ? category : undefined
+      );
+    }
+  }, [hoveredCategory]);
 
   return (
     <div
@@ -36,38 +46,39 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
       {
         <header className="nav-categs-detail__header">
           <div role="heading" aria-level="1">
-            {group}
+            {currentCategory && currentCategory.label}
           </div>
         </header>
       }
       <div className="nav-categs-detail__body">
         <div className="nav-categs-detail__body-content">
-          {subcategories.map((subcategory, index) => (
-            <div
-              className="nav-categs-detail__categ"
-              data-type="undefined"
-              key={index}
-            >
+          {currentCategory &&
+            currentCategory.subcategories.map((subcategory, index) => (
               <div
-                className="nav-categs-detail__title"
-                role="heading"
-                aria-level="2"
+                className="nav-categs-detail__categ"
+                data-type="undefined"
+                key={index}
               >
-                <a href="https://www.mercadolibre.com.ar/c/celulares-y-telefonos#menu=categories">
-                  {subcategory.name}
-                </a>
+                <div
+                  className="nav-categs-detail__title"
+                  role="heading"
+                  aria-level="2"
+                >
+                  <a href="https://www.mercadolibre.com.ar/c/celulares-y-telefonos#menu=categories">
+                    {subcategory.name}
+                  </a>
+                </div>
+                <ul className="nav-categs-detail__categ-list">
+                  {subcategory.items.map((item, index) => (
+                    <li key={index}>
+                      <a href="https://listado.mercadolibre.com.ar/celulares-telefonos/celulares-smartphones/#menu=categories">
+                        {item}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="nav-categs-detail__categ-list">
-                {subcategory.items.map((item, index) => (
-                  <li key={index}>
-                    <a href="https://listado.mercadolibre.com.ar/celulares-telefonos/celulares-smartphones/#menu=categories">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>
