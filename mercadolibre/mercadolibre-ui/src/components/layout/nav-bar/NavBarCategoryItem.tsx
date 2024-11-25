@@ -3,7 +3,7 @@ interface NavBarCategoryItemProps {
   key: number;
   categoryItemId: number;
   children: React.ReactNode;
-  onPointerChange?: (isPointerOver: boolean) => void;
+  onPointerChange?: (isPointerOverMenu: boolean) => void;
   setHoveredCategory: (hoveredCategory: number) => void;
 }
 
@@ -12,13 +12,19 @@ const NavBarCategoryItem: React.FC<NavBarCategoryItemProps> = ({
   categoryItemId,
   children,
   onPointerChange,
-  setHoveredCategory
+  setHoveredCategory,
 }) => {
   return (
     <li
       className="nav-categs-departments__list nav-categs-departments__list--static"
-      onMouseEnter={() => { onPointerChange && onPointerChange(true); setHoveredCategory(categoryItemId) } }
-      onMouseLeave={() => { onPointerChange && onPointerChange(false); setHoveredCategory(0) }}
+      onMouseEnter={() => {
+        onPointerChange && onPointerChange(true);
+        setHoveredCategory(categoryItemId);
+      }}
+      onMouseLeave={() => {
+        onPointerChange && onPointerChange(false);
+        setHoveredCategory(0);
+      }}
     >
       <a href={href}>{children}</a>
     </li>
