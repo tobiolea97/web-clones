@@ -9,15 +9,17 @@ interface NavBarSubCategoryItemProps {
 
 interface NavBarSubCategoryProps {
   hoveredCategory: number;
-  isPointerOverSubcategory?: boolean;
-  setIsPointerOverSubcategory?: (isPointerOverSubcategory: boolean) => void;
+  isPointerOverMenuSubcategory?: boolean;
+  setIsPointerOverMenuSubcategory?: (
+    isPointerOverMenuSubcategory: boolean
+  ) => void;
 }
 
 const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
   hoveredCategory,
-  isPointerOverSubcategory,
+  isPointerOverMenuSubcategory,
 }) => {
-  const [isPointerOver, setIsPointerOver] = useState(false);
+  const [isPointerOverMenu, setIsPointerOverMenu] = useState(false);
   const [currentCategory, setCurrentCategory] = useState<any>();
   useEffect(() => {
     if (hoveredCategory !== 0) {
@@ -39,9 +41,9 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
       //   tabindex="-1"
       role="dialog"
       aria-label="Tecnología"
-      onMouseEnter={() => setIsPointerOver(true)}
-      onMouseLeave={() => setIsPointerOver(false)}
-      hidden={isPointerOverSubcategory || isPointerOver ? "" : "hidden"}
+      onMouseEnter={() => setIsPointerOverMenu(true)}
+      onMouseLeave={() => setIsPointerOverMenu(false)}
+      hidden={isPointerOverMenuSubcategory || isPointerOverMenu ? "" : "hidden"}
     >
       {
         <header className="nav-categs-detail__header">

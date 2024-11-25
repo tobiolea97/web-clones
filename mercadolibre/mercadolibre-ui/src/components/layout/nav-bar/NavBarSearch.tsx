@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-const NavBarSearch = () => {
+interface NavBarSearchProps {
+  setIsPointerOverMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const NavBarSearch: React.FC<NavBarSearchProps> = ({
+  setIsPointerOverMenu,
+}) => {
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -8,7 +14,11 @@ const NavBarSearch = () => {
   };
 
   return (
-    <div className="nav-area nav-top-area nav-center-area">
+    <div className="nav-area nav-top-area nav-center-area"
+      onMouseEnter={() => {
+        setIsPointerOverMenu(false);
+      }}
+    >
       <form
         className="nav-search"
         action="https://www.mercadolibre.com.ar/jm/search"
@@ -59,4 +69,3 @@ const NavBarSearch = () => {
 };
 
 export default NavBarSearch;
-

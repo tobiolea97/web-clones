@@ -1,6 +1,17 @@
-const NavBarSendTo = () => {
+interface NavBarSendToProps {
+  setIsPointerOverMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const NavBarSendTo: React.FC<NavBarSendToProps> = ({
+  setIsPointerOverMenu,
+}) => {
   return (
-    <div className="nav-header-plus-cp-wrapper nav-area nav-bottom-area nav-left-area">
+    <div
+      className="nav-header-plus-cp-wrapper nav-area nav-bottom-area nav-left-area"
+      onMouseEnter={() => {
+        setIsPointerOverMenu(false);
+      }}
+    >
       <a
         className="nav-header-cp-anchor"
         data-js="cp"
@@ -30,4 +41,3 @@ const NavBarSendTo = () => {
 };
 
 export default NavBarSendTo;
-

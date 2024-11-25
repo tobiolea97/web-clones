@@ -5,18 +5,22 @@ import NavBarSubCategoryList from "./NavBarSubCategoryList";
 
 interface NavBarMenuProps {
   isMenuOpen: boolean;
-  isPointerOver: boolean;
-  setIsPointerOver: (isPointerOver: boolean) => void;
+  isPointerOverMenu: boolean;
+  setIsPointerOverMenu: (isPointerOverMenu: boolean) => void;
 }
 
-const NavBarCategoryList = ({ isMenuOpen, isPointerOver, setIsPointerOver }: NavBarMenuProps) => {
+const NavBarCategoryList = ({
+  isMenuOpen,
+  isPointerOverMenu,
+  setIsPointerOverMenu,
+}: NavBarMenuProps) => {
   const [hoveredCategory, setHoveredCategory] = useState(0);
-  const [isPointerOverSubcategory, setIsPointerOverSubcategory] =
+  const [isPointerOverMenuSubcategory, setIsPointerOverMenuSubcategory] =
     useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
-      setIsPointerOver(true);
+      setIsPointerOverMenu(true);
     }
   }, [isMenuOpen]);
 
@@ -28,9 +32,9 @@ const NavBarCategoryList = ({ isMenuOpen, isPointerOver, setIsPointerOver }: Nav
       aria-modal="true"
       // tabindex="-1"
       role="dialog"
-      hidden={isMenuOpen || isPointerOver ? "" : "hidden"}
-      onMouseEnter={() => setIsPointerOver(true)}
-      onMouseLeave={() => setIsPointerOver(false)}
+      hidden={isMenuOpen || isPointerOverMenu ? "" : "hidden"}
+      onMouseEnter={() => setIsPointerOverMenu(true)}
+      onMouseLeave={() => setIsPointerOverMenu(false)}
     >
       <ul className="nav-categs-departments" data-js="nav-categs-departments">
         {categories.map((category) => (
@@ -40,7 +44,7 @@ const NavBarCategoryList = ({ isMenuOpen, isPointerOver, setIsPointerOver }: Nav
             categoryItemId={category.id}
             onPointerChange={
               category.hasSubcategories
-                ? setIsPointerOverSubcategory
+                ? setIsPointerOverMenuSubcategory
                 : undefined
             }
             setHoveredCategory={setHoveredCategory}
@@ -50,7 +54,7 @@ const NavBarCategoryList = ({ isMenuOpen, isPointerOver, setIsPointerOver }: Nav
         ))}
       </ul>
       <NavBarSubCategoryList
-        isPointerOverSubcategory={isPointerOverSubcategory}
+        isPointerOverMenuSubcategory={isPointerOverMenuSubcategory}
         hoveredCategory={hoveredCategory}
       />
     </div>

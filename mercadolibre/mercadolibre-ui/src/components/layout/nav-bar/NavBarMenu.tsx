@@ -3,32 +3,30 @@ import NavBarCategoryList from "./NavBarCategoryList";
 import NavBarMenuItem from "./NavBarMenuItem";
 import { menuItems } from "./NavBarMockedData";
 
-const NavBarMenu = () => {
+interface NavBarMenuProps {
+  isPointerOverMenu: boolean;
+  setIsPointerOverMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const NavBarMenu: React.FC<NavBarMenuProps> = ({ setIsPointerOverMenu, isPointerOverMenu }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isPointerOver, setIsPointerOver] = useState(false);
 
   return (
     <div
       className="nav-area nav-bottom-area nav-center-area"
       onMouseEnter={() => {
         setIsMenuOpen(false);
-        setIsPointerOver(false);
+        setIsPointerOverMenu(false);
       }}
     >
       <div
         className="nav-menu"
         onMouseEnter={() => {
           setIsMenuOpen(false);
-          setIsPointerOver(false);
+          setIsPointerOverMenu(false);
         }}
       >
-        <ul
-          className="nav-menu-list"
-          onMouseEnter={() => {
-            setIsMenuOpen(false);
-            setIsPointerOver(false);
-          }}
-        >
+        <ul className="nav-menu-list">
           <li
             className="nav-menu-item"
             onMouseEnter={() => setIsMenuOpen(true)}
@@ -46,12 +44,16 @@ const NavBarMenu = () => {
             </a>
             <NavBarCategoryList
               isMenuOpen={isMenuOpen}
-              isPointerOver={isPointerOver}
-              setIsPointerOver={setIsPointerOver}
+              isPointerOverMenu={isPointerOverMenu}
+              setIsPointerOverMenu={setIsPointerOverMenu}
             />
           </li>
           {menuItems.map((item, index) => (
-            <NavBarMenuItem href={item.url} key={index}>
+            <NavBarMenuItem
+              href={item.url}
+              key={index}
+              setIsPointerOverMenu={setIsPointerOverMenu}
+            >
               {item.label}
             </NavBarMenuItem>
           ))}
