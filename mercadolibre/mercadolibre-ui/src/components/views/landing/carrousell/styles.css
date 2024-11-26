@@ -1,0 +1,7 @@
+.andes-carousel-snapped__wrapper_inline {
+  display: flex;
+  will-change: transform;
+  flex-direction: row;
+  transition: transform 500ms;
+  transform: translate3d(-7680px, 0px, 0px);
+}

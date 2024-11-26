@@ -1,5 +1,5 @@
 import NavBar from "../../components/layout/nav-bar";
-import Carrousell from "../../components/views/landing";
+import Carrousell from "../../components/views/landing/carrousell";
 
 const Landing = () => {
   return (
