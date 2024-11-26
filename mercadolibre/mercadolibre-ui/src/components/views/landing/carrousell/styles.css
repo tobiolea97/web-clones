@@ -1,7 +1,49 @@
-.andes-carousel-snapped__wrapper_inline {
+[role=main] {
+  height: 100%;
+}
+
+.home {
+  /* overflow: hidden; */
+  position: relative;
+} 
+
+.andes-carousel-snapped__exhibitor-wrapper.andes-carousel-snapped__hero--desktop {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+
+.andes-carousel-snapped__container--full {
+  width: 100%;
+}
+
+.andes-carousel-snapped__container {
+  position: relative;
+}
+
+.andes-carousel-snapped__controls-wrapper {
+  position: relative;
+}
+
+.andes-carousel-snapped--scroll-hidden {
+  margin: -10px;
+  overflow-x: hidden;
+  padding: 10px;
+}
+
+.andes-carousel-snapped {
+  height: 100%;
+}
+
+.andes-carousel-snapped__wrapper {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   display: flex;
   will-change: transform;
   flex-direction: row;
   transition: transform 500ms;
-  transform: translate3d(-7680px, 0px, 0px);
+  transform: translate3d(-5760px, 0px, 0px);
 }
