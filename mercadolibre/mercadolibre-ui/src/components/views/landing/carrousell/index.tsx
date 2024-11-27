@@ -4,27 +4,61 @@ import "./styles.css";
 const Carrousell = () => {
   useEffect(() => {
     const wrapper = document.querySelector(".andes-carousel-snapped__wrapper");
+    const slides = document.querySelectorAll(".andes-carousel-snapped__slide"); // Asegúrate de que esta clase coincida
+    const slideWidth = 1920; // Ancho de cada slide (ajusta según sea necesario)
+    const totalSlides = slides.length;
 
-    // Variables para almacenar la posición actual y el límite
-    let translateX = 0;
-    const maxSlides = 6; // Número total de slides (ajústalo según tu carrusel)
-    const slideWidth = 1920; // Ancho de cada slide
+    // Índice inicial (imagen-2, tercera posición)
+    let currentIndex = 1;
 
-    function updateTransform() {
-      // Reducir la posición en 1920px
-      translateX -= slideWidth;
+    // Posicionar el carrusel en `imagen-2` al inicio
+    wrapper.style.transform = `translate3d(${
+      -currentIndex * slideWidth
+    }px, 0, 0)`;
 
-      // Reiniciar si alcanzamos el final del carrusel
-      if (Math.abs(translateX) >= maxSlides * slideWidth) {
-        translateX = 0; // Reinicia la posición al principio
-      }
+    // Función para mover el carrusel
+    function moveCarousel() {
+      console.log("moveCarousel", currentIndex);
+      // Incrementar el índice para mover a la derecha
+      currentIndex += 1;
 
-      // Aplicar el nuevo valor de transform
-      wrapper.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+      // Aplicar la transición suave
+      wrapper.style.transition = "transform 500ms ease-in-out";
+      wrapper.style.transform = `translate3d(${
+        -currentIndex * slideWidth
+      }px, 0, 0)`;
+
+      // Verificar si alcanzamos un extremo después de la animación
+      wrapper.addEventListener("transitionend", resetPosition);
     }
 
-    // Llamar a la función cada 5 segundos
-    setInterval(updateTransform, 5000);
+    // Función para manejar los extremos del carrusel
+    function resetPosition() {
+      console.log("resetPosition", currentIndex);
+      // // Si estamos en `imagen-6-right`, saltar a `imagen-6-left`
+      if (currentIndex === 6) {
+        currentIndex = 0; // Volver a `imagen-2` después de pasar por las imágenes duplicadas
+        wrapper.style.transition = "none"; // Eliminar transición
+        wrapper.style.transform = `translate3d(${
+          -currentIndex * slideWidth
+        }px, 0, 0)`;
+      }
+
+      // Si estamos en `imagen-6-left`, saltar a `imagen-6-right`
+      // if (currentIndex === 1) {
+      //   currentIndex = totalSlides - 3; // Volver a `imagen-6-right`
+      //   wrapper.style.transition = "none"; // Eliminar transición
+      //   wrapper.style.transform = `translate3d(${
+      //     -currentIndex * slideWidth
+      //   }px, 0, 0)`;
+      // }
+
+      // Eliminar el evento para evitar conflictos
+      wrapper.removeEventListener("transitionend", resetPosition);
+    }
+
+    // Configurar el bucle automático
+    setInterval(moveCarousel, 3000);
   }, []);
 
   return (
@@ -60,7 +94,7 @@ const Carrousell = () => {
                 <div className="andes-carousel-snapped__wrapper">
                   <div
                     role="group"
-                    className="andes-carousel-snapped__slide andes-carousel-snapped__slide--next"
+                    className="andes-carousel-snapped__slide"
                     aria-label="6 de 6"
                     // style="width: 1920px; margin-right: 0px;"
                     data-slider="5"
@@ -179,7 +213,7 @@ const Carrousell = () => {
                   </div>
                   <div
                     role="group"
-                    className="andes-carousel-snapped__slide andes-carousel-snapped__slide--next"
+                    className="andes-carousel-snapped__slide"
                     aria-label="6 de 6"
                     // style="width: 1920px; margin-right: 0px;"
                     data-slider="5"
@@ -247,7 +281,7 @@ const Carrousell = () => {
             </span>
           </button> */}
             </div>
-            <ul
+            {/* <ul
               class="andes-carousel-snapped__pagination andes-carousel-snapped__pagination--dark andes-carousel-snapped__pagination--position-inner"
               aria-hidden="true"
             >
@@ -323,7 +357,7 @@ const Carrousell = () => {
                   <span class="andes-visually-hidden">Página 6</span>
                 </button>
               </li>
-            </ul>
+            </ul> */}
           </section>
         </div>
       </div>
