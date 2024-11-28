@@ -7,6 +7,14 @@ const NavBarSlice = createSlice({
     subcategoyMenuOpen: false,
   },
   reducers: {
+    toogleCategoryMenu: (state, actions) => {
+      state.categoryMenuOpen = actions.payload;
+      state.subcategoyMenuOpen = false;
+    },
+    toogleSubcategoryMenu: (state, actions) => {
+      state.subcategoyMenuOpen = actions.payload;
+    },
+    // TODO: remove the ones below
     showCategoryMenu: (state) => {
       state.categoryMenuOpen = true;
     },
@@ -24,6 +32,8 @@ const NavBarSlice = createSlice({
 });
 
 export const {
+  toogleCategoryMenu,
+  toogleSubcategoryMenu,
   showCategoryMenu,
   hideCategoryMenu,
   showSubcategoryMenu,
