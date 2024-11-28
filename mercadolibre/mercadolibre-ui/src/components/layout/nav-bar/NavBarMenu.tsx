@@ -2,6 +2,8 @@ import { useState } from "react";
 import NavBarCategoryList from "./NavBarCategoryList";
 import NavBarMenuItem from "./NavBarMenuItem";
 import { menuItems } from "./NavBarMockedData";
+import { useSelector, useDispatch } from "react-redux";
+import { showCategoryMenu, hideCategoryMenu } from "../../../store/slices/NavBarSlice";
 
 interface NavBarMenuProps {
   isPointerOverMenu: boolean;
@@ -10,6 +12,7 @@ interface NavBarMenuProps {
 
 const NavBarMenu: React.FC<NavBarMenuProps> = ({ setIsPointerOverMenu, isPointerOverMenu }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const dispatch = useDispatch();
 
   return (
     <div
@@ -29,7 +32,11 @@ const NavBarMenu: React.FC<NavBarMenuProps> = ({ setIsPointerOverMenu, isPointer
         <ul className="nav-menu-list">
           <li
             className="nav-menu-item"
-            onMouseEnter={() => setIsMenuOpen(true)}
+
+            onMouseEnter={() => {
+              setIsMenuOpen(true)
+              dispatch(showCategoryMenu());
+            }}
             onMouseLeave={() => setIsMenuOpen(false)}
           >
             <a

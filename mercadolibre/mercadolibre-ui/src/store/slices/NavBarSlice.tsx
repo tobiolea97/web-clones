@@ -12,6 +12,7 @@ const NavBarSlice = createSlice({
     },
     hideCategoryMenu: (state) => {
       state.categoryMenuOpen = false;
+      state.subcategoyMenuOpen = false;
     },
     showSubcategoryMenu: (state) => {
       state.subcategoyMenuOpen = true;
