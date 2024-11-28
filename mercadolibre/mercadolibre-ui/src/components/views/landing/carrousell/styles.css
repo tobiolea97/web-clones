@@ -2,6 +2,8 @@
   height: 100%;
 }
 
+
+
 .home {
   /* overflow: hidden; */
   position: relative;
@@ -44,6 +46,5 @@
   display: flex;
   will-change: transform;
   flex-direction: row;
-  transition: transform 500ms;
-  transform: translate3d(-5760px, 0px, 0px);
+  transition: transform 500ms ease-in-out;
 }
