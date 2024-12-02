@@ -50,8 +50,7 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
         dispatch(toogleSubcategoryMenu(true));
       }}
       onMouseLeave={() => {
-        dispatch(toogleCategoryMenu(false));
-        dispatch(toogleSubcategoryMenu(true));
+        dispatch(toogleSubcategoryMenu(false));
       }}
       hidden={
         currentCategory &&
