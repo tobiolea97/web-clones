@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toogleCategoryMenu } from "../../../store/slices/NavBarSlice";
 
-
 const NavBarSearch = () => {
   const [searchValue, setSearchValue] = useState("");
   const dispatch = useDispatch();
@@ -12,7 +11,8 @@ const NavBarSearch = () => {
   };
 
   return (
-    <div className="nav-area nav-top-area nav-center-area"
+    <div
+      className="nav-area nav-top-area nav-center-area"
       onMouseEnter={() => {
         dispatch(toogleCategoryMenu(false));
       }}
