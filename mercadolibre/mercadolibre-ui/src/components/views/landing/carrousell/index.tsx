@@ -18,7 +18,7 @@ const Carrousell = () => {
 
     // Función para mover el carrusel
     function moveCarousel() {
-      console.log("moveCarousel", currentIndex);
+      // console.log("moveCarousel", currentIndex);
       // Incrementar el índice para mover a la derecha
       currentIndex += 1;
 
@@ -34,7 +34,7 @@ const Carrousell = () => {
 
     // Función para manejar los extremos del carrusel
     function resetPosition() {
-      console.log("resetPosition", currentIndex);
+      // console.log("resetPosition", currentIndex);
       // // Si estamos en `imagen-6-right`, saltar a `imagen-6-left`
       if (currentIndex === 6) {
         currentIndex = 0; // Volver a `imagen-2` después de pasar por las imágenes duplicadas

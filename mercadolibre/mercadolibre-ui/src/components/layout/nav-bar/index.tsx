@@ -5,21 +5,16 @@ import NavBarPromotionalBanner from "./NavBarPromotionalBanner";
 import NavBarSendTo from "./NavBarSendTo";
 import NavBarMenu from "./NavBarMenu";
 import NavBarUserMenu from "./NavBarUserMenu";
-import { useState } from "react";
 
 const NavBar = () => {
-  const [isPointerOverMenu, setIsPointerOverMenu] = useState(false);
   return (
     <header className="nav-header nav-header-plus ui-navigation-v2">
       <div className="nav-bounds nav-bounds-with-cart">
         <NavBarLogoComponent />
-        <NavBarSearch setIsPointerOverMenu={setIsPointerOverMenu} />
+        <NavBarSearch />
         <NavBarPromotionalBanner />
-        <NavBarSendTo setIsPointerOverMenu={setIsPointerOverMenu}/>
-        <NavBarMenu
-          isPointerOverMenu={isPointerOverMenu}
-          setIsPointerOverMenu={setIsPointerOverMenu}
-        />
+        <NavBarSendTo />
+        <NavBarMenu />
         <NavBarUserMenu />
       </div>
     </header>

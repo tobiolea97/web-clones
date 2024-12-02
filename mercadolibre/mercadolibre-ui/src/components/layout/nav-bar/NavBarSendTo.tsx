@@ -1,15 +1,14 @@
-interface NavBarSendToProps {
-  setIsPointerOverMenu: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import { useDispatch } from "react-redux";
+import { toogleCategoryMenu } from "../../../store/slices/NavBarSlice";
 
-const NavBarSendTo: React.FC<NavBarSendToProps> = ({
-  setIsPointerOverMenu,
-}) => {
+const NavBarSendTo = () => {
+  const dispatch = useDispatch();
+
   return (
     <div
       className="nav-header-plus-cp-wrapper nav-area nav-bottom-area nav-left-area"
       onMouseEnter={() => {
-        setIsPointerOverMenu(false);
+        dispatch(toogleCategoryMenu(false));
       }}
     >
       <a
