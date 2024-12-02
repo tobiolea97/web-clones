@@ -2,9 +2,7 @@ import NavBarCategoryList from "./NavBarCategoryList";
 import NavBarMenuItem from "./NavBarMenuItem";
 import { menuItems } from "./NavBarMockedData";
 import { useDispatch } from "react-redux";
-import {
-  toogleCategoryMenu
-} from "../../../store/slices/NavBarSlice";
+import { toogleCategoryMenu } from "../../../store/slices/NavBarSlice";
 
 const NavBarMenu = () => {
   const dispatch = useDispatch();
@@ -42,10 +40,7 @@ const NavBarMenu = () => {
             <NavBarCategoryList />
           </li>
           {menuItems.map((item, index) => (
-            <NavBarMenuItem
-              href={item.url}
-              key={index}
-            >
+            <NavBarMenuItem href={item.url} key={index}>
               {item.label}
             </NavBarMenuItem>
           ))}

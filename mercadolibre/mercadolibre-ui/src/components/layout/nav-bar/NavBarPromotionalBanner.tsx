@@ -14,4 +14,3 @@ const NavBarPromotionalBanner = () => {
   );
 };
 export default NavBarPromotionalBanner;
-
