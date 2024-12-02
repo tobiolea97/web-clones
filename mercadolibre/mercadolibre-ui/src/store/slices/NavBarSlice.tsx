@@ -1,11 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export interface NavBarState {
+  categoryMenuOpen: boolean;
+  subcategoyMenuOpen: boolean;
+}
+
+const initialState: NavBarState = {
+  categoryMenuOpen: false,
+  subcategoyMenuOpen: false,
+};
+
 const NavBarSlice = createSlice({
-  name: "counter", // Nombre del slice
-  initialState: {
-    categoryMenuOpen: false,
-    subcategoyMenuOpen: false,
-  },
+  name: "navBar",
+  initialState,
   reducers: {
     toogleCategoryMenu: (state, actions) => {
       state.categoryMenuOpen = actions.payload;

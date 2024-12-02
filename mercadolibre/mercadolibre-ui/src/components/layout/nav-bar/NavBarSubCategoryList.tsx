@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
 import { categories } from "./NavBarMockedData";
-
-interface NavBarSubCategoryItemProps {
-  id: number;
-  name: string;
-  items: string[];
-}
+import { useSelector } from "react-redux";
+import { CustomStoreState } from "../../../store/Store";
 
 interface NavBarSubCategoryProps {
   hoveredCategory: number;
-  isPointerOverMenuSubcategory?: boolean;
   setIsPointerOverMenuSubcategory?: (
     isPointerOverMenuSubcategory: boolean
   ) => void;
@@ -17,10 +12,14 @@ interface NavBarSubCategoryProps {
 
 const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
   hoveredCategory,
-  isPointerOverMenuSubcategory,
 }) => {
   const [isPointerOverMenu, setIsPointerOverMenu] = useState(false);
   const [currentCategory, setCurrentCategory] = useState<any>();
+
+  const isPointerOverMenuSubcategory = useSelector(
+    (state: CustomStoreState) => state.navBar.subcategoyMenuOpen
+  );
+
   useEffect(() => {
     if (hoveredCategory !== 0) {
       const category = categories.find(

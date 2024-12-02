@@ -1,26 +1,25 @@
 import { useEffect, useState } from "react";
-import NavBarCategoryItem from "./NavBarCategoryItem";
 import { categories } from "./NavBarMockedData";
+import { useSelector, useDispatch } from "react-redux";
+import NavBarCategoryItem from "./NavBarCategoryItem";
 import NavBarSubCategoryList from "./NavBarSubCategoryList";
+import { CustomStoreState } from "../../../store/Store";
+import {
+  toogleCategoryMenu,
+  toogleSubcategoryMenu,
+} from "../../../store/slices/NavBarSlice";
 
-interface NavBarMenuProps {
-  isMenuOpen: boolean;
-  isPointerOverMenu: boolean;
-  setIsPointerOverMenu: (isPointerOverMenu: boolean) => void;
-}
+const NavBarCategoryList = () => {
+  const dispatch = useDispatch();
+  const isMenuOpen = useSelector(
+    (state: CustomStoreState) => state.navBar.categoryMenuOpen
+  );
 
-const NavBarCategoryList = ({
-  isMenuOpen,
-  isPointerOverMenu,
-  setIsPointerOverMenu,
-}: NavBarMenuProps) => {
   const [hoveredCategory, setHoveredCategory] = useState(0);
-  const [isPointerOverMenuSubcategory, setIsPointerOverMenuSubcategory] =
-    useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
-      setIsPointerOverMenu(true);
+      dispatch(toogleCategoryMenu(true));
     }
   }, [isMenuOpen]);
 
@@ -32,9 +31,9 @@ const NavBarCategoryList = ({
       aria-modal="true"
       // tabindex="-1"
       role="dialog"
-      hidden={isMenuOpen || isPointerOverMenu ? "" : "hidden"}
-      onMouseEnter={() => setIsPointerOverMenu(true)}
-      onMouseLeave={() => setIsPointerOverMenu(false)}
+      hidden={isMenuOpen ? "" : "hidden"}
+      onMouseEnter={() => dispatch(toogleCategoryMenu(true))}
+      onMouseLeave={() => dispatch(toogleCategoryMenu(false))}
     >
       <ul className="nav-categs-departments" data-js="nav-categs-departments">
         {categories.map((category) => (
@@ -42,21 +41,13 @@ const NavBarCategoryList = ({
             href={category.url}
             key={category.id}
             categoryItemId={category.id}
-            onPointerChange={
-              category.hasSubcategories
-                ? setIsPointerOverMenuSubcategory
-                : undefined
-            }
             setHoveredCategory={setHoveredCategory}
           >
             {category.label}
           </NavBarCategoryItem>
         ))}
       </ul>
-      <NavBarSubCategoryList
-        isPointerOverMenuSubcategory={isPointerOverMenuSubcategory}
-        hoveredCategory={hoveredCategory}
-      />
+      <NavBarSubCategoryList hoveredCategory={hoveredCategory} />
     </div>
   );
 };
