@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { categories } from "./NavBarMockedData";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { CustomStoreState } from "../../../store/Store";
-
-import { useDispatch } from "react-redux";
-import { toogleCategoryMenu } from "../../../store/slices/NavBarSlice";
+import {
+  toogleCategoryMenu,
+  toogleSubcategoryMenu,
+} from "../../../store/slices/NavBarSlice";
 
 interface NavBarSubCategoryProps {
   hoveredCategory: number;
@@ -44,10 +45,20 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
       //   tabindex="-1"
       role="dialog"
       aria-label="Tecnología"
-      onMouseEnter={() => dispatch(toogleCategoryMenu(true))}
-      onMouseLeave={() => dispatch(toogleCategoryMenu(false))}
+      onMouseEnter={() => {
+        dispatch(toogleCategoryMenu(true));
+        dispatch(toogleSubcategoryMenu(true));
+      }}
+      onMouseLeave={() => {
+        dispatch(toogleCategoryMenu(false));
+        dispatch(toogleSubcategoryMenu(true));
+      }}
       hidden={
-        currentCategory && currentCategory.hasSubcategories ? "" : "hidden"
+        currentCategory &&
+        currentCategory.hasSubcategories &&
+        isPointerOverMenuSubcategory
+          ? ""
+          : "hidden"
       }
     >
       {
