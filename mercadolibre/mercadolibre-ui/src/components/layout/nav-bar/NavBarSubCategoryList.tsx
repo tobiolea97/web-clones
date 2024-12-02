@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { categories } from "./NavBarMockedData";
-
-interface NavBarSubCategoryItemProps {
-  id: number;
-  name: string;
-  items: string[];
-}
+import { useSelector, useDispatch } from "react-redux";
+import { CustomStoreState } from "../../../store/Store";
+import {
+  toogleCategoryMenu,
+  toogleSubcategoryMenu,
+} from "../../../store/slices/NavBarSlice";
 
 interface NavBarSubCategoryProps {
   hoveredCategory: number;
-  isPointerOverMenuSubcategory?: boolean;
   setIsPointerOverMenuSubcategory?: (
     isPointerOverMenuSubcategory: boolean
   ) => void;
@@ -17,18 +16,23 @@ interface NavBarSubCategoryProps {
 
 const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
   hoveredCategory,
-  isPointerOverMenuSubcategory,
 }) => {
-  const [isPointerOverMenu, setIsPointerOverMenu] = useState(false);
   const [currentCategory, setCurrentCategory] = useState<any>();
+  const dispatch = useDispatch();
+
+  const isPointerOverMenuSubcategory = useSelector(
+    (state: CustomStoreState) => state.navBar.subcategoyMenuOpen
+  );
+
   useEffect(() => {
     if (hoveredCategory !== 0) {
+      console.log("searching for category: ", hoveredCategory);
       const category = categories.find(
         (category) => category.id === hoveredCategory
       );
-      setCurrentCategory(
-        category && category.hasSubcategories ? category : undefined
-      );
+      console.log("category found: ", category);
+      setCurrentCategory(category);
+      console.log("currentCategory is now: ", currentCategory);
     }
   }, [hoveredCategory]);
 
@@ -41,9 +45,20 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
       //   tabindex="-1"
       role="dialog"
       aria-label="Tecnología"
-      onMouseEnter={() => setIsPointerOverMenu(true)}
-      onMouseLeave={() => setIsPointerOverMenu(false)}
-      hidden={isPointerOverMenuSubcategory || isPointerOverMenu ? "" : "hidden"}
+      onMouseEnter={() => {
+        dispatch(toogleCategoryMenu(true));
+        dispatch(toogleSubcategoryMenu(true));
+      }}
+      onMouseLeave={() => {
+        dispatch(toogleSubcategoryMenu(false));
+      }}
+      hidden={
+        currentCategory &&
+        currentCategory.hasSubcategories &&
+        isPointerOverMenuSubcategory
+          ? ""
+          : "hidden"
+      }
     >
       {
         <header className="nav-categs-detail__header">
@@ -55,6 +70,7 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
       <div className="nav-categs-detail__body">
         <div className="nav-categs-detail__body-content">
           {currentCategory &&
+            currentCategory.hasSubcategories &&
             currentCategory.subcategories.map((subcategory, index) => (
               <div
                 className="nav-categs-detail__categ"

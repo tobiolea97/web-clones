@@ -1,18 +1,17 @@
+import { toogleCategoryMenu } from "../../../store/slices/NavBarSlice";
+import { useDispatch } from "react-redux";
+
 interface NavBarMenuItemProps {
   href: string;
   children: React.ReactNode;
-  setIsPointerOverMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavBarMenuItem: React.FC<NavBarMenuItemProps> = ({
-  href,
-  children,
-  setIsPointerOverMenu,
-}) => {
+const NavBarMenuItem: React.FC<NavBarMenuItemProps> = ({ href, children }) => {
+  const dispatch = useDispatch();
   return (
     <li
       className="nav-menu-item"
-      onMouseEnter={() => setIsPointerOverMenu(false)}
+      onMouseEnter={() => dispatch(toogleCategoryMenu(false))}
     >
       <a href={href} className="nav-menu-item-link" rel="">
         {children}

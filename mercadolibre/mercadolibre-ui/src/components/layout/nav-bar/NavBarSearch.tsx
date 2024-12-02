@@ -1,22 +1,20 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toogleCategoryMenu } from "../../../store/slices/NavBarSlice";
 
-interface NavBarSearchProps {
-  setIsPointerOverMenu: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const NavBarSearch: React.FC<NavBarSearchProps> = ({
-  setIsPointerOverMenu,
-}) => {
+const NavBarSearch = () => {
   const [searchValue, setSearchValue] = useState("");
+  const dispatch = useDispatch();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
 
   return (
-    <div className="nav-area nav-top-area nav-center-area"
+    <div
+      className="nav-area nav-top-area nav-center-area"
       onMouseEnter={() => {
-        setIsPointerOverMenu(false);
+        dispatch(toogleCategoryMenu(false));
       }}
     >
       <form
