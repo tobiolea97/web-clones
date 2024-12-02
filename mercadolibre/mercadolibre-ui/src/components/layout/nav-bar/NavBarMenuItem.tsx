@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 interface NavBarMenuItemProps {
   href: string;
   children: React.ReactNode;
-  setIsPointerOverMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const NavBarMenuItem: React.FC<NavBarMenuItemProps> = ({ href, children }) => {

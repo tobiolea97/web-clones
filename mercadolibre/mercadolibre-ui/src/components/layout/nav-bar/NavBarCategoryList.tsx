@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import { categories } from "./NavBarMockedData";
 import { useSelector, useDispatch } from "react-redux";
+import { CustomStoreState } from "../../../store/Store";
+import { toogleCategoryMenu } from "../../../store/slices/NavBarSlice";
 import NavBarCategoryItem from "./NavBarCategoryItem";
 import NavBarSubCategoryList from "./NavBarSubCategoryList";
-import { CustomStoreState } from "../../../store/Store";
-import {
-  toogleCategoryMenu,
-  toogleSubcategoryMenu,
-} from "../../../store/slices/NavBarSlice";
 
 const NavBarCategoryList = () => {
   const dispatch = useDispatch();

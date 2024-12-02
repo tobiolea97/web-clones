@@ -3,6 +3,9 @@ import { categories } from "./NavBarMockedData";
 import { useSelector } from "react-redux";
 import { CustomStoreState } from "../../../store/Store";
 
+import { useDispatch } from "react-redux";
+import { toogleCategoryMenu } from "../../../store/slices/NavBarSlice";
+
 interface NavBarSubCategoryProps {
   hoveredCategory: number;
   setIsPointerOverMenuSubcategory?: (
@@ -13,8 +16,8 @@ interface NavBarSubCategoryProps {
 const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
   hoveredCategory,
 }) => {
-  const [isPointerOverMenu, setIsPointerOverMenu] = useState(false);
   const [currentCategory, setCurrentCategory] = useState<any>();
+  const dispatch = useDispatch();
 
   const isPointerOverMenuSubcategory = useSelector(
     (state: CustomStoreState) => state.navBar.subcategoyMenuOpen
@@ -22,12 +25,13 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
 
   useEffect(() => {
     if (hoveredCategory !== 0) {
+      console.log("searching for category: ", hoveredCategory);
       const category = categories.find(
         (category) => category.id === hoveredCategory
       );
-      setCurrentCategory(
-        category && category.hasSubcategories ? category : undefined
-      );
+      console.log("category found: ", category);
+      setCurrentCategory(category);
+      console.log("currentCategory is now: ", currentCategory);
     }
   }, [hoveredCategory]);
 
@@ -40,9 +44,11 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
       //   tabindex="-1"
       role="dialog"
       aria-label="Tecnología"
-      onMouseEnter={() => setIsPointerOverMenu(true)}
-      onMouseLeave={() => setIsPointerOverMenu(false)}
-      hidden={isPointerOverMenuSubcategory || isPointerOverMenu ? "" : "hidden"}
+      onMouseEnter={() => dispatch(toogleCategoryMenu(true))}
+      onMouseLeave={() => dispatch(toogleCategoryMenu(false))}
+      hidden={
+        currentCategory && currentCategory.hasSubcategories ? "" : "hidden"
+      }
     >
       {
         <header className="nav-categs-detail__header">
@@ -54,6 +60,7 @@ const NavBarSubCategoryList: React.FC<NavBarSubCategoryProps> = ({
       <div className="nav-categs-detail__body">
         <div className="nav-categs-detail__body-content">
           {currentCategory &&
+            currentCategory.hasSubcategories &&
             currentCategory.subcategories.map((subcategory, index) => (
               <div
                 className="nav-categs-detail__categ"

@@ -28,7 +28,6 @@ const NavBarMenu = () => {
             onMouseEnter={() => {
               dispatch(toogleCategoryMenu(true));
             }}
-            onMouseLeave={() => dispatch(toogleCategoryMenu(false))}
           >
             <a
               href="https://www.mercadolibre.com.ar/categorias#nav-header"
