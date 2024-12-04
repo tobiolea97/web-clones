@@ -4,67 +4,60 @@ import "./styles.css";
 const Carrousell = () => {
   useEffect(() => {
     const wrapper = document.querySelector(".andes-carousel-snapped__wrapper");
-    const slides = document.querySelectorAll(".andes-carousel-snapped__slide"); 
-    const slideWidth = window.innerWidth;
-    const totalSlides = slides.length;
-
+    const slides = document.querySelectorAll(".andes-carousel-snapped__slide");
     let currentIndex = 1;
-    wrapper.style.transition = "none";
-    wrapper.style.transform = `translate3d(${
-      -currentIndex * window.innerWidth
-    }px, 0, 0)`;
-
+  
+    function adjustCarousel() {
+      const slideWidth = window.innerWidth; // Recalcular el ancho del slide
+      wrapper.style.transition = "none"; // Evitar animaciones durante el ajuste
+      wrapper.style.transform = `translate3d(${-currentIndex * slideWidth}px, 0, 0)`; // Reposicionar el carrusel
+    }
+  
+    function adjustImageWidth() {
+      const images = document.querySelectorAll(".andes-carousel-snapped__slide img");
+      const slideWidth = window.innerWidth; // Ancho del viewport
+  
+      images.forEach((img) => {
+        img.style.width = `${slideWidth}px`; // Ajustar ancho dinámicamente
+        img.style.height = "auto"; // Mantener proporción de la imagen
+      });
+  
+      // Reposicionar el carrusel después de ajustar las imágenes
+      adjustCarousel();
+    }
+  
+    // Configurar el carrusel al cargar
+    adjustCarousel();
+  
     function moveCarousel() {
       currentIndex += 1;
       wrapper.style.transition = "transform 500ms ease-in-out";
-      wrapper.style.transform = `translate3d(${
-        -currentIndex * window.innerWidth
-      }px, 0, 0)`;
-
+      wrapper.style.transform = `translate3d(${-currentIndex * window.innerWidth}px, 0, 0)`;
+  
       wrapper.addEventListener("transitionend", resetPosition);
     }
-
-    // Función para manejar los extremos del carrusel
+  
     function resetPosition() {
-      if (currentIndex === 6) {
-        currentIndex = 0;
+      if (currentIndex === slides.length - 1) {
+        currentIndex = 1; // Volver al primer slide real
         wrapper.style.transition = "none";
-        wrapper.style.transform = `translate3d(${
-          -currentIndex * window.innerWidth
-        }px, 0, 0)`;
+        wrapper.style.transform = `translate3d(${-currentIndex * window.innerWidth}px, 0, 0)`;
       }
-
-      // Si estamos en `imagen-6-left`, saltar a `imagen-6-right`
-      // if (currentIndex === 1) {
-      //   currentIndex = totalSlides - 3; // Volver a `imagen-6-right`
-      //   wrapper.style.transition = "none"; // Eliminar transición
-      //   wrapper.style.transform = `translate3d(${
-      //     -currentIndex * window.innerWidth
-      //   }px, 0, 0)`;
-      // }
-
       wrapper.removeEventListener("transitionend", resetPosition);
     }
-
-    function adjustImageWidth() {
-      const images = document.querySelectorAll('.andes-carousel-snapped__slide img');
-      const slideWidth = window.innerWidth; // Ancho del viewport
-    
-      images.forEach((img) => {
-        img.style.width = `${slideWidth}px`; // Ajusta el ancho dinámicamente
-        img.style.height = 'auto'; // Mantiene la proporción de la imagen
-      });
-    }
-    
-    // Ajustar al cargar la página
-    adjustImageWidth();
-    
-    // Ajustar al redimensionar la ventana
-    window.addEventListener('resize', adjustImageWidth);
-    
-
-    setInterval(moveCarousel, 3000);
+  
+    // Ajustar las imágenes y la posición del carrusel al redimensionar
+    window.addEventListener("resize", adjustImageWidth);
+  
+    // Configurar el movimiento automático del carrusel
+    const intervalId = setInterval(moveCarousel, 3000);
+  
+    return () => {
+      clearInterval(intervalId); // Limpiar el intervalo al desmontar el componente
+      window.removeEventListener("resize", adjustImageWidth); // Eliminar el listener
+    };
   }, []);
+  
 
   return (
     <main>
