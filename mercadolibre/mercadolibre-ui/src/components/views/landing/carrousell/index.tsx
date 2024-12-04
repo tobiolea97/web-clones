@@ -6,58 +6,69 @@ const Carrousell = () => {
     const wrapper = document.querySelector(".andes-carousel-snapped__wrapper");
     const slides = document.querySelectorAll(".andes-carousel-snapped__slide");
     let currentIndex = 1;
-  
+
     function adjustCarousel() {
       const slideWidth = window.innerWidth; // Recalcular el ancho del slide
       wrapper.style.transition = "none"; // Evitar animaciones durante el ajuste
-      wrapper.style.transform = `translate3d(${-currentIndex * slideWidth}px, 0, 0)`; // Reposicionar el carrusel
+      wrapper.style.transform = `translate3d(${
+        -currentIndex * slideWidth
+      }px, 0, 0)`; // Reposicionar el carrusel
     }
-  
+
     function adjustImageWidth() {
-      const images = document.querySelectorAll(".andes-carousel-snapped__slide img");
+      const images = document.querySelectorAll(
+        ".andes-carousel-snapped__slide img"
+      );
       const slideWidth = window.innerWidth; // Ancho del viewport
-  
+
       images.forEach((img) => {
         img.style.width = `${slideWidth}px`; // Ajustar ancho dinámicamente
         img.style.height = "auto"; // Mantener proporción de la imagen
       });
-  
+
       // Reposicionar el carrusel después de ajustar las imágenes
       adjustCarousel();
     }
-  
-    // Configurar el carrusel al cargar
-    adjustCarousel();
-  
+
+    // Ajustar las imágenes y el carrusel al cargar la página
+    adjustImageWidth();
+
     function moveCarousel() {
       currentIndex += 1;
       wrapper.style.transition = "transform 500ms ease-in-out";
-      wrapper.style.transform = `translate3d(${-currentIndex * window.innerWidth}px, 0, 0)`;
-  
+      wrapper.style.transform = `translate3d(${
+        -currentIndex * window.innerWidth
+      }px, 0, 0)`;
+
       wrapper.addEventListener("transitionend", resetPosition);
     }
-  
+
     function resetPosition() {
       if (currentIndex === slides.length - 1) {
         currentIndex = 1; // Volver al primer slide real
         wrapper.style.transition = "none";
-        wrapper.style.transform = `translate3d(${-currentIndex * window.innerWidth}px, 0, 0)`;
+        wrapper.style.transform = `translate3d(${
+          -currentIndex * window.innerWidth
+        }px, 0, 0)`;
       }
       wrapper.removeEventListener("transitionend", resetPosition);
     }
-  
-    // Ajustar las imágenes y la posición del carrusel al redimensionar
+
+    // Ajustar las imágenes y la posición al redimensionar
     window.addEventListener("resize", adjustImageWidth);
-  
+
     // Configurar el movimiento automático del carrusel
     const intervalId = setInterval(moveCarousel, 3000);
-  
+
+    // Asegurarse de que el ajuste inicial ocurre después de cargar todo el contenido
+    window.addEventListener("load", adjustImageWidth);
+
     return () => {
       clearInterval(intervalId); // Limpiar el intervalo al desmontar el componente
-      window.removeEventListener("resize", adjustImageWidth); // Eliminar el listener
+      window.removeEventListener("resize", adjustImageWidth); // Eliminar el listener de resize
+      window.removeEventListener("load", adjustImageWidth); // Eliminar el listener de load
     };
   }, []);
-  
 
   return (
     <main>
