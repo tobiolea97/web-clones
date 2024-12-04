@@ -4,43 +4,33 @@ import "./styles.css";
 const Carrousell = () => {
   useEffect(() => {
     const wrapper = document.querySelector(".andes-carousel-snapped__wrapper");
-    const slides = document.querySelectorAll(".andes-carousel-snapped__slide"); // Asegúrate de que esta clase coincida
-    const slideWidth = 1920; // Ancho de cada slide (ajusta según sea necesario)
+    const slides = document.querySelectorAll(".andes-carousel-snapped__slide"); 
+    const slideWidth = window.innerWidth;
     const totalSlides = slides.length;
 
-    // Índice inicial (imagen-2, tercera posición)
     let currentIndex = 1;
-
-    // Posicionar el carrusel en `imagen-2` al inicio
+    wrapper.style.transition = "none";
     wrapper.style.transform = `translate3d(${
-      -currentIndex * slideWidth
+      -currentIndex * window.innerWidth
     }px, 0, 0)`;
 
-    // Función para mover el carrusel
     function moveCarousel() {
-      // console.log("moveCarousel", currentIndex);
-      // Incrementar el índice para mover a la derecha
       currentIndex += 1;
-
-      // Aplicar la transición suave
       wrapper.style.transition = "transform 500ms ease-in-out";
       wrapper.style.transform = `translate3d(${
-        -currentIndex * slideWidth
+        -currentIndex * window.innerWidth
       }px, 0, 0)`;
 
-      // Verificar si alcanzamos un extremo después de la animación
       wrapper.addEventListener("transitionend", resetPosition);
     }
 
     // Función para manejar los extremos del carrusel
     function resetPosition() {
-      // console.log("resetPosition", currentIndex);
-      // // Si estamos en `imagen-6-right`, saltar a `imagen-6-left`
       if (currentIndex === 6) {
-        currentIndex = 0; // Volver a `imagen-2` después de pasar por las imágenes duplicadas
-        wrapper.style.transition = "none"; // Eliminar transición
+        currentIndex = 0;
+        wrapper.style.transition = "none";
         wrapper.style.transform = `translate3d(${
-          -currentIndex * slideWidth
+          -currentIndex * window.innerWidth
         }px, 0, 0)`;
       }
 
@@ -49,15 +39,30 @@ const Carrousell = () => {
       //   currentIndex = totalSlides - 3; // Volver a `imagen-6-right`
       //   wrapper.style.transition = "none"; // Eliminar transición
       //   wrapper.style.transform = `translate3d(${
-      //     -currentIndex * slideWidth
+      //     -currentIndex * window.innerWidth
       //   }px, 0, 0)`;
       // }
 
-      // Eliminar el evento para evitar conflictos
       wrapper.removeEventListener("transitionend", resetPosition);
     }
 
-    // Configurar el bucle automático
+    function adjustImageWidth() {
+      const images = document.querySelectorAll('.andes-carousel-snapped__slide img');
+      const slideWidth = window.innerWidth; // Ancho del viewport
+    
+      images.forEach((img) => {
+        img.style.width = `${slideWidth}px`; // Ajusta el ancho dinámicamente
+        img.style.height = 'auto'; // Mantiene la proporción de la imagen
+      });
+    }
+    
+    // Ajustar al cargar la página
+    adjustImageWidth();
+    
+    // Ajustar al redimensionar la ventana
+    window.addEventListener('resize', adjustImageWidth);
+    
+
     setInterval(moveCarousel, 3000);
   }, []);
 
@@ -65,7 +70,7 @@ const Carrousell = () => {
     <main>
       <div className="home">
         <div className="andes-carousel-snapped__exhibitor-wrapper andes-carousel-snapped__hero--desktop">
-          <section className="andes-carousel-snapped__container andes-carousel-snapped__container--full andes-carousel-snapped__container--with-controls andes-carousel-snapped__container--strict-boundaries">
+          <section className="andes-carousel-snapped__container andes-carousel-snapped__container--full andes-carousel-snapped__container--with-controls andes-carousel-snapped__container--strict-boundaries image-container ">
             <div className="andes-carousel-snapped__controls-wrapper">
               {/* <button
             className="andes-carousel-snapped__control andes-carousel-snapped__control--previous andes-carousel-snapped__control--size-large"
